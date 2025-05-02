@@ -1,5 +1,6 @@
 import usesBackgroundPlaceholder from '~/assets/uses-background-placeholder.jpg';
-import usesBackground from '~/assets/uses-background.mp4';
+// Import the Moroccan mint tea image from static files
+import moroccanMintTeaImage from '/static/moroccan-mint-tea.jpg';
 import { Footer } from '~/components/footer';
 import { Link } from '~/components/link';
 import { List, ListItem } from '~/components/list';
@@ -29,37 +30,50 @@ export const Uses = () => {
     <>
       <ProjectContainer className={styles.uses}>
         <ProjectBackground
-          src={usesBackground}
+          src={moroccanMintTeaImage} // Use the Moroccan mint tea image
           placeholder={usesBackgroundPlaceholder}
           opacity={0.7}
         />
         <ProjectHeader
           title="Uses"
-          description="A somewhat comprehensive list of tools, apps, hardware, and more that I use on a daily basis to design and code things. And yeah, that is a Johnny Mnemonic GIF in the background."
+          description="Here's a quick rundown of the tools, apps, and gear I use as a Data Science student to investigate data, build projects, and keep my workflow smooth. <br />Oh, and that's Moroccan tea in the background, my dad swears it's the ultimate headache fix!"
         />
         <ProjectSection padding="none" className={styles.section}>
           <ProjectSectionContent>
             <ProjectTextRow width="m">
-              <ProjectSectionHeading>Design</ProjectSectionHeading>
+              <ProjectSectionHeading>Data Science & Visualization</ProjectSectionHeading>
               <ProjectSectionText as="div">
                 <List>
                   <ListItem>
-                    <Link href="https://www.figma.com">Figma</Link> is my primary tool for
-                    UI design these days. Made the switch from Sketch in 2020 and haven’t
-                    looked back. I’ve also created{' '}
-                    <Link href="https://www.figma.com/@hamish">a few plugins</Link> that
-                    you can install.
+                    <Link href="https://jupyter.org/">Jupyter Notebook</Link> My go-to 
+                    for coding up Python and R scripts, especially for data analysis 
+                    and machine learning projects like my <Link href="https://github.com/yassnemo/real-time-sentiment-twitter-analysis">
+                    Twitter Sentiment Analysis</Link>. It’s perfect for mixing code, 
+                    visuals, and notes.{' '}
+                    
                   </ListItem>
                   <ListItem>
-                    Any motion graphics I create are created in Adobe After Effects. So
-                    far I haven’t found a non-Adobe product that’s as good. If anyone has
-                    suggestions please <Link href="/contact">message me</Link>.
+                    <Link href="https://app.powerbi.com/">Power BI</Link> is what I use to 
+                    create dashboards that turn raw data into clear, stakeholder-friendly 
+                    stories. It's quite literally my secret ingridiant for making numbers 
+                    pop.
                   </ListItem>
                   <ListItem>
-                    For any 3D models and video editing I use{' '}
-                    <Link href="https://www.blender.org/">Blender</Link>. Since 2.8 it’s
-                    become way simpler to use and in a lot of ways better than expensive
-                    paid tools like 3DS Max or Maya.
+                    <Link href="https://www.knime.com/">KNIME</Link> is a lifesaver for quick 
+                    sentiment and keyword analysis with drag-and-drop workflows. Great for 
+                    when I want to prototype without diving too deep into code.
+                  </ListItem>
+                  <ListItem>
+                    <Link href="https://www.dask.org/">Dask</Link> is the my go to when 
+                    datasets get too big for Pandas, I turn to it for parallel computing. 
+                    It’s quite literally like Pandas on steroids, allowing me push massive 
+                    CSV files or run distributed ML models without crashing my humble laptop. 
+                  </ListItem>
+                  <ListItem>
+                    <Link href="https://mlflow.org/">MLflow</Link> a pro favorite for 
+                    managing the machine learning lifecycle. I use it to track experiments, 
+                    log model parameters, and deploy models. It Keeps my ML projects 
+                    organized and scalable.
                   </ListItem>
                 </List>
               </ProjectSectionText>
@@ -73,41 +87,72 @@ export const Uses = () => {
               <ProjectSectionText as="div">
                 <List>
                   <ListItem>
-                    I use <Link href="https://vscodium.com/">VSCodium</Link> as my text
-                    editor, with the Tokyo Night theme and Operator Mono as my typeface of
-                    choice.
+                    I use <Link href="https://vscodium.com/">VS Code</Link> as my
+                    main code editor, rocking the <Link href="https://vscodium.com/">
+                    Night Owl</Link> theme with Fira Code font for that clean, 
+                    readable vibe. 
                   </ListItem>
                   <ListItem>
-                    Firefox is my main browser for both development and general use.
+                   Chrome is my main browser. DevTools is a game-changer for real-time 
+                   tweaks.
                   </ListItem>
                   <ListItem>
-                    <Link href="https://reactjs.org/">React</Link> is my front end
-                    Javascript library of choice. The component-centric mental model is
-                    the first thing that truly made sense to me as a designer.
+                    <Link href="https://www.docker.com/">Docker</Link>  I lean on this for 
+                    setting up environments, like my FHIR server for a Google Summer 
+                    of Code project. Keeps things tidy and reproducible.
                   </ListItem>
                   <ListItem>
-                    For 3D effects and image shaders I use{' '}
-                    <Link href="https://threejs.org/">three.js</Link>. It has a bit of a
-                    learning curve but you can do some really powerful stuff with it.
+                    Git & GitHub is Where I stash my projects. Git for version control 
+                    is my safety net.
+                  </ListItem>
+                </List>
+              </ProjectSectionText>
+            </ProjectTextRow>
+          </ProjectSectionContent>
+        </ProjectSection>
+        <ProjectSection padding="none" className={styles.section}>
+          <ProjectSectionContent>
+            <ProjectTextRow width="m">
+              <ProjectSectionHeading>Creative Tools</ProjectSectionHeading>
+              <ProjectSectionText as="div">
+                <List>
+                  <ListItem>
+                    I use <Link href="https://vscodium.com/">Canva</Link> For 
+                    quick visuals to spice up my blog posts or portfolio, like 
+                    infographics for my article on multiple intelligences. It’s 
+                    simple but gets the job done.
                   </ListItem>
                   <ListItem>
-                    For CSS I’ve used a myriad pre-processors and css-in-js solutions like
-                    styled-components, but these days I’m using vanilla CSS with{' '}
-                    <Link href="https://postcss.org/">PostCSS</Link> to get upcoming CSS
-                    features today.
+                    <Link href="https://www.napkin.ai/">Napkin</Link> is a neat tool 
+                    for sketching out ideas and wireframes for my projects. I mainly 
+                    use it in turning rough concepts into clear visuals fast.
                   </ListItem>
                   <ListItem>
-                    For Javascript animations I use{' '}
-                    <Link href="https://www.framer.com/motion/">Framer Motion</Link>, it’s
-                    a great way to add spring animations to React and three.js.
+                    FL Studio is my go-to for producing 
+                    <Link href="https://soundcloud.com/yassine-erradouani"> Quran 
+                    recitations</Link>. It's quite simple to use and has a ton of 
+                    features for mixing and mastering.
+                  </ListItem>
+                </List>
+              </ProjectSectionText>
+            </ProjectTextRow>
+          </ProjectSectionContent>
+        </ProjectSection>
+        <ProjectSection padding="none" className={styles.section}>
+          <ProjectSectionContent>
+            <ProjectTextRow width="m">
+              <ProjectSectionHeading>Productivity</ProjectSectionHeading>
+              <ProjectSectionText as="div">
+                <List>
+                  <ListItem>
+                    I like using <Link href="https://www.notion.com/">Notion</Link> to 
+                    Keep my project ideas, study notes, and blog drafts organized. It’s 
+                    like my brain’s external hard drive.
                   </ListItem>
                   <ListItem>
-                    For building and testing UI components in isolation I use{' '}
-                    <Link href="https://storybook.js.org/">Storybook</Link>. Check out the{' '}
-                    <Link href="https://storybook.hamishw.com">
-                      storybook for this website
-                    </Link>
-                    .
+                    <Link href="https://colab.research.google.com/">Google Colab</Link>  
+                    is what I use for running heavy machine learning models when my laptop 
+                    needs a break. Cloud power for the win.
                   </ListItem>
                 </List>
               </ProjectSectionText>
@@ -121,40 +166,24 @@ export const Uses = () => {
               <Table>
                 <TableBody>
                   <TableRow>
-                    <TableHeadCell>Desktop</TableHeadCell>
-                    <TableCell>Custom built</TableCell>
-                  </TableRow>
-                  <TableRow>
                     <TableHeadCell>Operating system</TableHeadCell>
-                    <TableCell>Arch Linux (by the way)</TableCell>
+                    <TableCell>Windows 10 Pro & Kali Linux</TableCell>
                   </TableRow>
                   <TableRow>
                     <TableHeadCell>Browser</TableHeadCell>
-                    <TableCell>Zen Browser</TableCell>
-                  </TableRow>
-                  <TableRow>
-                    <TableHeadCell>Monitor</TableHeadCell>
-                    <TableCell>1440p IPS 144hz LG 27GL850</TableCell>
+                    <TableCell>Chrome & Tor</TableCell>
                   </TableRow>
                   <TableRow>
                     <TableHeadCell>Keyboard</TableHeadCell>
-                    <TableCell>Tofu65</TableCell>
+                    <TableCell>Redragon K617</TableCell>
                   </TableRow>
                   <TableRow>
                     <TableHeadCell>Mouse</TableHeadCell>
-                    <TableCell>Logitech G403</TableCell>
+                    <TableCell>E-YOOSO X-31 </TableCell>
                   </TableRow>
                   <TableRow>
                     <TableHeadCell>Laptop</TableHeadCell>
-                    <TableCell>Macbook Pro 14″</TableCell>
-                  </TableRow>
-                  <TableRow>
-                    <TableHeadCell>Headphones</TableHeadCell>
-                    <TableCell>Audio Technica ATH-M50x/Apple Airpods</TableCell>
-                  </TableRow>
-                  <TableRow>
-                    <TableHeadCell>Microphone</TableHeadCell>
-                    <TableCell>Blue Yeti</TableCell>
+                    <TableCell>HP EliteBook 840 G7</TableCell>
                   </TableRow>
                 </TableBody>
               </Table>
