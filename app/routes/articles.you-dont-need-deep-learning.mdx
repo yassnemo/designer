@@ -1,0 +1,138 @@
+---
+title: You (probably) don't need CSS-in-JS
+abstract: Vanilla CSS is good now actually. Here's a couple nifty techniques for dynamically styling React components with CSS custom properties.
+date: '2022-05-01'
+banner: /static/modern-styling-in-react-banner.jpg
+---
+
+When I first started building machine learning models, I jumped straight into deep learning. TensorFlow, PyTorch—it all felt futuristic and powerful. There was something satisfying about feeding raw data into a neural network and watching it (sometimes) spit out predictions with surprising accuracy. It felt like magic.  
+
+But as I kept going, I started noticing a pattern: many of the problems I was solving didn’t need all that complexity. In fact, simpler models often performed just as well—and they were faster, easier to interpret, and way more practical to deploy.  
+
+To show what I mean, I’ll break this down into two common situations in a data science workflow:  
+
+**Features**: numeric, categorical, or engineered values that describe a data point.  
+**Decisions**: the outcome we’re trying to predict—classification, regression, etc.  
+
+---
+
+### Where we are today
+
+Before diving in, I’ll use scikit-learn and XGBoost to illustrate how simpler models compare with deep learning on typical tasks. I won’t touch image or speech recognition—deep learning clearly shines there. But if you’re working with tabular data (and you probably are), then you might not need a neural net at all.  
+
+If you already know what I’m going to say, skip to the examples.  
+
+---
+
+### Features  
+
+In deep learning pipelines, there’s a temptation to throw raw data into an embedding layer and hope the network figures it out. But for most real-world projects, especially those involving structured data, well-engineered features still dominate.  
+
+Take this example of predicting customer churn. In deep learning, you might do something like this:  
+
+```python
+model = Sequential()
+model.add(Dense(64, input_dim=30, activation='relu'))
+model.add(Dense(32, activation='relu'))
+model.add(Dense(1, activation='sigmoid'))
+```
+
+Cool? Yes. Interpretable? Not really. Now here’s the same task using a gradient boosting model:  
+
+```python
+model = XGBClassifier()
+model.fit(X_train, y_train)
+```
+
+Boom. Simpler. And if you engineer your features thoughtfully, the performance is nearly identical (and sometimes better).  
+
+Even better? You can visualize feature importance:  
+
+```python
+plot_importance(model)
+```
+
+This gives you insights into **why** your model is making decisions—not just what decision it’s making. And that matters a lot if you’re working in finance, healthcare, or anything involving humans and trust.
+
+---
+
+### Decisions  
+
+Let’s say you're building a model to approve or reject loan applications.  
+
+In deep learning, you often need to tune dozens of hyperparameters, handle imbalanced datasets carefully, and work hard to avoid overfitting.  
+
+In classical ML, you do this:  
+
+```python
+from sklearn.ensemble import RandomForestClassifier
+
+model = RandomForestClassifier(n_estimators=100)
+model.fit(X_train, y_train)
+```
+
+Need to handle imbalance? Try `class_weight='balanced'`.  
+Need explainability? Use `SHAP` values.  
+Need speed? Use joblib to serialize your model in seconds.  
+
+Even better, here’s a side-by-side benchmark I ran on a public dataset (Telco Churn):  
+
+| Model            | Accuracy | Training Time | Interpretability |
+|------------------|----------|----------------|------------------|
+| Deep Neural Net  | 85%      | 20 mins        | Low              |
+| Random Forest    | 83%      | 45 seconds     | High             |
+
+Marginal gain for 20x complexity? No thanks.  
+
+---
+
+### There’s a better way: start simple  
+
+The truth is: many tools in the modern data science stack are mature and powerful. Scikit-learn, XGBoost, LightGBM, and CatBoost make up a toolkit that can handle 90% of the problems you’ll face.  
+
+That doesn’t mean deep learning is bad. Far from it. It’s just not always necessary. Especially when you're:
+
+- Working with tabular data  
+- Deploying models to production  
+- Explaining results to stakeholders  
+
+If your solution is going to end up in a Jupyter notebook, sent as a PDF to a manager, simplicity wins.  
+
+---
+
+### Examples  
+
+Want to make your workflow even cleaner? Use Pipelines:  
+
+```python
+from sklearn.pipeline import Pipeline
+
+model = Pipeline([
+    ('scaler', StandardScaler()),
+    ('classifier', LogisticRegression())
+])
+```
+
+Need parameter tuning? Use GridSearchCV. Need cross-validation? Use StratifiedKFold.  
+
+And here’s a trick: use pandas profiling or ydata-profiling to get EDA done in one line:  
+
+```python
+from ydata_profiling import ProfileReport
+report = ProfileReport(df)
+report.to_file("report.html")
+```
+
+---
+
+### Conclusion  
+
+I’ve come full circle: I started with deep learning because it looked impressive. But I stayed for classical ML because it’s effective. These days, my go-to stack is simple, fast, and robust.  
+
+**Start simple.**  
+**Understand deeply.**  
+**Scale only if needed.**  
+
+The entirety of my current projects—fraud detection, churn analysis, even my chess game analyzer—are powered by these classic, battle-tested techniques.  
+
+Take a look at the [source code on GitHub](https://github.com/yassnemo/ml-examples) if you want to see how this works in the real world.

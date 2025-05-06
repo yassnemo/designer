@@ -11,7 +11,7 @@ import styles from './error.module.css';
 import { Image } from '~/components/image';
 import flatlineSkull from './error-flatline.svg';
 
-export function Error({ error }) {
+export function Error({ error = {} }) {
   const flatlined = !error.status;
 
   const getMessage = () => {

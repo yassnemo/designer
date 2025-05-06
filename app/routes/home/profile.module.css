@@ -141,3 +141,78 @@
     opacity: 1;
   }
 }
+
+/* START: Education and Tech Stack section styles - Remove if not needed */
+.sectionTitle {
+  margin-top: var(--spaceL);
+  margin-bottom: var(--spaceM);
+  font-size: var(--fontSizeH4);
+  opacity: 0;
+  transition: opacity var(--durationXL) ease var(--durationL);
+
+  &[data-visible='true'] {
+    opacity: 1;
+  }
+}
+
+.education,
+.techStack {
+  opacity: 0;
+  transform: translate3d(0, var(--spaceM), 0);
+  transition-property: transform, opacity;
+  transition-duration: var(--durationXL);
+  transition-timing-function: var(--bezierFastoutSlowin);
+  transition-delay: var(--durationM);
+  padding-bottom: var(--spaceM);
+
+  &[data-visible='true'] {
+    transform: none;
+    opacity: 1;
+  }
+}
+
+.educationItem {
+  margin-bottom: var(--spaceM);
+}
+
+.educationDegree {
+  color: var(--textTitle);
+  font-weight: var(--fontWeightMedium);
+  margin-bottom: 2px;
+}
+
+.educationDetails {
+  color: var(--textLight);
+}
+
+.techCategory {
+  margin-bottom: var(--spaceM);
+}
+
+.techTitle {
+  color: var(--textTitle);
+  font-weight: var(--fontWeightMedium);
+  margin-bottom: 2px;
+}
+
+.techList {
+  color: var(--textBody);
+}
+
+.techIcons {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: var(--spaceM);
+  margin-top: 8px;
+}
+
+.techIcon {
+  color: var(--primary);
+  transition: transform 0.2s ease;
+}
+
+.techIcon:hover {
+  transform: translateY(-3px);
+}
+/* END: Education and Tech Stack section styles */

@@ -142,14 +142,6 @@
   .navIcon {
     fill: currentColor;
     transition: fill var(--durationM) ease;
-    width: 20px;
-    height: 20px;
-  }
-
-  .monkeyTypeIcon {
-    width: 28px;
-    height: 28px;
-    transform: translateX(-4px);
   }
 
   .mobileNav {
@@ -239,37 +231,5 @@
       opacity: 1;
       transform: none;
     }
-  }
-
-  .mobileNavControls {
-    position: fixed;
-    bottom: var(--spaceXL);
-    left: 0;
-    right: 0;
-    display: flex;
-    justify-content: space-between;
-    width: 100%;
-    padding: 0 var(--spaceL);
-    box-sizing: border-box;
-    z-index: var(--zIndex5);
-  }
-
-  .mobileNavIcons {
-    display: flex;
-    flex-direction: row;
-    gap: var(--spaceXS);
-    margin-left: 0;
-    padding-left: 0;
-    justify-content: flex-start;
-  }
-
-  .mobileNavIcons .navIconLink {
-    padding: var(--spaceXS);
-    width: auto;
-    height: auto;
-  }
-
-  .mobileThemeToggle {
-    margin-right: var(--spaceS);
   }
 }

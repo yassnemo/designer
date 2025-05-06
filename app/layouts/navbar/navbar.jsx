@@ -216,16 +216,7 @@ const NavbarIcons = ({ desktop }) => (
         target="_blank"
         rel="noopener noreferrer"
       >
-        <Icon 
-          className={styles.navIcon}
-          icon={icon}
-          size={20}
-          style={{ 
-            display: 'block', 
-            overflow: 'visible',
-            margin: '0 auto'
-          }} 
-        />
+        <Icon className={styles.navIcon} icon={icon} />
       </a>
     ))}
   </div>
