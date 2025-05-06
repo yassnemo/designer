@@ -1,3 +1,6 @@
 kv_namespaces = [
   { id = "MY_KV", binding="MY_KV" }
 ]
+
+# Required configuration for Cloudflare Pages
+pages_build_output_dir = "build/client"

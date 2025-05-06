@@ -5,14 +5,22 @@
 }
 
 .section {
-  opacity: 1; /* Change from opacity 0 to 1 to make sections visible by default */
+  opacity: 0; /* Start with opacity 0 to hide initially */
   padding-top: var(--spaceL);
   padding-bottom: var(--spaceL);
   margin-top: var(--spaceXL);
   position: relative; /* Added position */
+  transform: translateY(30px); /* Initial transform to slide up from */
+  transition: opacity 0.8s var(--bezierFastoutSlowin), 
+              transform 0.8s var(--bezierFastoutSlowin);
 
   + & {
     margin-top: 0;
+  }
+  
+  &[data-visible="true"] {
+    opacity: 1;
+    transform: translateY(0);
   }
 }
 
@@ -364,6 +372,70 @@
     flex-direction: column;
     align-items: center;
   }
+}
+
+.downloadSection {
+  display: flex;
+  justify-content: center;
+  margin: var(--spaceL) 0;
+  padding-top: 0;
+  padding-bottom: 0;
+  margin-bottom: var(--spaceM);
+  margin-top: calc(var(--spaceM) * -1);
+  opacity: 0;
+  transform: translateY(30px);
+  animation: fadeSlideUp 0.8s var(--bezierFastoutSlowin) forwards 0.2s;
+}
+
+.downloadContainer {
+  display: flex;
+  justify-content: flex-start;
+  margin-bottom: var(--spaceS);
+  margin-top: -16px;
+  padding: 0;
+  position: relative;
+  z-index: 1;
+  opacity: 0;
+  transform: translateY(30px);
+  animation: fadeSlideUp 0.8s var(--bezierFastoutSlowin) forwards 0.2s;
+}
+
+.downloadButton {
+  width: 100%;
+  max-width: 1080px;
+  margin: 0 auto;
+  background-color: transparent;
+  color: #fff;
+  height: 56px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 0;
+  clip-path: none;
+}
+
+.downloadButton:hover {
+  transform: scale(1.05);
+}
+
+.buttonContainer {
+  padding-top: 0;
+  padding-bottom: 0;
+}
+
+.buttonWrapper {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin: 0;
+  padding: 0;
+}
+
+.buttonBackground {
+  background-color: #000;
+  width: 100%;
+  margin: 0;
+  padding: 0;
 }
 
 @keyframes skillFadeIn {
