@@ -4,3 +4,4 @@ kv_namespaces = [
 
 # Required configuration for Cloudflare Pages
 pages_build_output_dir = "build/client"
+name = "designer"
