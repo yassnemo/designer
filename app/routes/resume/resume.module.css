@@ -1,0 +1,389 @@
+.resume {
+  --maxWidthL: var(--maxWidthM);
+  position: relative;
+  padding-bottom: var(--space4XL); /* Added bottom padding */
+}
+
+.section {
+  opacity: 1; /* Change from opacity 0 to 1 to make sections visible by default */
+  padding-top: var(--spaceL);
+  padding-bottom: var(--spaceL);
+  margin-top: var(--spaceXL);
+  position: relative; /* Added position */
+
+  + & {
+    margin-top: 0;
+  }
+}
+
+.sectionHeading {
+  display: flex;
+  align-items: center;
+  margin-bottom: var(--spaceL);
+  position: relative;
+  opacity: 1; /* Changed from opacity 0 to 1 */
+
+  @media (--mediaUseMotion) {
+    animation: fade-in 1.2s var(--bezierFastoutSlowin) forwards;
+  }
+}
+
+.sectionLine {
+  flex: 1;
+  height: 2px;
+  background-color: color-mix(in lab, var(--primary) 30%, transparent);
+  margin-left: var(--spaceM);
+  transform: scaleX(1); /* Changed from 0 to 1 to make visible */
+  transform-origin: left;
+  
+  @media (--mediaUseMotion) {
+    animation: reveal 1.5s var(--bezierFastoutSlowin) forwards 0.3s;
+  }
+}
+
+.divider {
+  margin-top: var(--spaceXL);
+  margin-bottom: var(--spaceXL);
+  height: 1px;
+  background-color: color-mix(in lab, var(--text) 10%, transparent);
+}
+
+.timePeriod {
+  color: var(--textLight);
+  font-size: var(--fontSizeBodyS);
+  margin-bottom: var(--spaceXS);
+  display: flex;
+  align-items: center;
+}
+
+.timeIcon {
+  margin-right: var(--spaceS);
+  color: var(--primary);
+}
+
+.resume .textRow {
+  margin-bottom: var(--spaceL);
+  transition-property: opacity;
+  transition-timing-function: var(--bezierFastoutSlowin);
+  transition-duration: var(--durationXL);
+  opacity: 1; /* Changed from 0 to 1 */
+  transform: none; /* Remove any transforms */
+  
+  @media (--mediaUseMotion) {
+    transition-property: transform, opacity;
+  }
+  
+  &[data-visible="true"] {
+    transform: none;
+    opacity: 1;
+  }
+}
+
+.resumeRow {
+  margin-bottom: var(--spaceXL);
+  position: relative;
+  transform-origin: left;
+  opacity: 1; /* Changed from 0 to 1 */
+  padding-left: var(--spaceM);
+  
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 3px;
+    background-color: color-mix(in lab, var(--primary) 40%, transparent);
+    opacity: 0;
+    transform: scaleY(0);
+    transform-origin: top;
+    transition: transform 0.6s var(--bezierFastoutSlowin), opacity 0.3s ease;
+  }
+  
+  &:hover::before {
+    opacity: 1;
+    transform: scaleY(1);
+  }
+  
+  @media (--mediaUseMotion) {
+    animation: fade-in 0.8s ease forwards;
+  }
+  
+  &:nth-child(1) {
+    animation-delay: 0.1s;
+  }
+  
+  &:nth-child(2) {
+    animation-delay: 0.2s;
+  }
+  
+  &:nth-child(3) {
+    animation-delay: 0.3s;
+  }
+  
+  &:nth-child(4) {
+    animation-delay: 0.4s;
+  }
+}
+
+.resumeRole {
+  margin-bottom: var(--spaceXS);
+  color: var(--textTitle);
+  position: relative;
+  display: inline-block;
+  
+  &::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background-color: var(--primary);
+    transform: scaleX(0);
+    transform-origin: right;
+    transition: transform 0.4s var(--bezierFastoutSlowin);
+  }
+  
+  .resumeRow:hover & {
+    &::after {
+      transform: scaleX(1);
+      transform-origin: left;
+    }
+  }
+}
+
+.resumeDetails {
+  margin-top: var(--spaceM);
+}
+
+.skillsContainer {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(90px, 1fr));
+  gap: var(--spaceXL);
+  margin-top: var(--spaceL);
+  position: relative;
+  
+  @media (--mediaMobile) {
+    grid-template-columns: repeat(auto-fill, minmax(70px, 1fr));
+    gap: var(--spaceM);
+  }
+}
+
+.skillItem {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  opacity: 1; /* Changed from 0 to 1 */
+  transform: translateY(0); /* Changed to no transform */
+  
+  @media (--mediaUseMotion) {
+    animation: skillFadeIn 0.6s var(--bezierFastoutSlowin) forwards;
+  }
+  
+  &:nth-child(1) { animation-delay: 0.1s; }
+  &:nth-child(2) { animation-delay: 0.15s; }
+  &:nth-child(3) { animation-delay: 0.2s; }
+  &:nth-child(4) { animation-delay: 0.25s; }
+  &:nth-child(5) { animation-delay: 0.3s; }
+  &:nth-child(6) { animation-delay: 0.35s; }
+  &:nth-child(7) { animation-delay: 0.4s; }
+  &:nth-child(8) { animation-delay: 0.45s; }
+  &:nth-child(9) { animation-delay: 0.5s; }
+  &:nth-child(10) { animation-delay: 0.55s; }
+  &:nth-child(11) { animation-delay: 0.6s; }
+  &:nth-child(12) { animation-delay: 0.65s; }
+}
+
+.skillIcon {
+  width: 56px;
+  height: 56px;
+  padding: var(--spaceM);
+  border-radius: 12px;
+  background-color: color-mix(in lab, var(--background) 70%, var(--primary) 10%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: var(--spaceS);
+  transition: transform 0.3s var(--bezierFastoutSlowin), 
+              background-color 0.3s ease,
+              box-shadow 0.3s ease;
+  position: relative;
+  z-index: 1;
+  
+  svg {
+    width: 28px;
+    height: 28px;
+    color: var(--primary);
+    fill: currentColor;
+  }
+  
+  &::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    clip-path: polygon(
+      0 0,
+      100% 0,
+      100% calc(100% - 8px),
+      calc(100% - 8px) 100%,
+      0 100%
+    );
+    background-color: color-mix(in lab, var(--primary) 20%, transparent);
+    border-radius: 10px;
+    transform: scale(0.8);
+    opacity: 0;
+    transition: transform 0.3s var(--bezierFastoutSlowin), opacity 0.3s ease;
+    z-index: -1;
+  }
+  
+  &:hover {
+    transform: translateY(-5px);
+    background-color: color-mix(in lab, var(--background) 70%, var(--primary) 15%);
+    box-shadow: 0 10px 20px color-mix(in lab, var(--black) 15%, transparent);
+    
+    &::before {
+      transform: scale(1);
+      opacity: 1;
+    }
+  }
+  
+  @media (--mediaMobile) {
+    width: 48px;
+    height: 48px;
+    padding: var(--spaceS);
+    
+    svg {
+      width: 24px;
+      height: 24px;
+    }
+  }
+}
+
+.skillName {
+  font-size: var(--fontSizeBodyXS);
+  text-align: center;
+  color: var(--textLight);
+  margin-top: var(--spaceXS);
+  font-weight: var(--fontWeightMedium);
+  opacity: 0;
+  transform: translateY(5px);
+  transition: opacity 0.3s ease, transform 0.3s var(--bezierFastoutSlowin);
+}
+
+.skillItem:hover .skillName {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.projectCard {
+  background-color: color-mix(in lab, var(--background) 95%, var(--primary) 5%);
+  border-radius: 16px;
+  padding: var(--spaceXL);
+  margin-bottom: var(--spaceL);
+  transition: transform 0.4s var(--bezierFastoutSlowin), 
+              box-shadow 0.4s var(--bezierFastoutSlowin),
+              background-color 0.3s ease;
+  position: relative;
+  overflow: hidden;
+  opacity: 1; /* Changed from 0 to 1 */
+  
+  @media (--mediaUseMotion) {
+    animation: fadeSlideUp 0.8s var(--bezierFastoutSlowin) forwards;
+  }
+  
+  &:nth-child(1) {
+    animation-delay: 0.1s;
+  }
+  
+  &:nth-child(2) {
+    animation-delay: 0.2s;
+  }
+  
+  &:nth-child(3) {
+    animation-delay: 0.3s;
+  }
+  
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 4px;
+    height: 100%;
+    background-color: var(--primary);
+    transform: scaleY(0.7);
+    transform-origin: bottom;
+    transition: transform 0.3s var(--bezierFastoutSlowin);
+  }
+  
+  &::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to bottom right, 
+                color-mix(in lab, var(--primary) 20%, transparent) 0%,
+                transparent 70%);
+    opacity: 0;
+    transition: opacity 0.4s ease;
+  }
+  
+  &:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 16px 30px color-mix(in lab, var(--black) 15%, transparent);
+    background-color: color-mix(in lab, var(--background) 95%, var(--primary) 8%);
+    
+    &::before {
+      transform: scaleY(1);
+    }
+    
+    &::after {
+      opacity: 0.07;
+    }
+  }
+}
+
+.contactSection {
+  text-align: center;
+  padding: var(--spaceXL) 0;
+  margin-top: var(--space2XL);
+  position: relative;
+}
+
+.contactButtons {
+  display: flex;
+  gap: var(--spaceL);
+  margin-top: var(--spaceXL);
+  justify-content: center;
+  
+  @media (--mediaMobile) {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+@keyframes skillFadeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeSlideUp {
+  0% {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
