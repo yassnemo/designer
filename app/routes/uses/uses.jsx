@@ -1,5 +1,4 @@
 import usesBackgroundPlaceholder from '~/assets/uses-background-placeholder.jpg';
-// Import the Moroccan mint tea image from static files
 import moroccanMintTeaImage from '/static/moroccan-mint-tea.jpg';
 import { Footer } from '~/components/footer';
 import { Link } from '~/components/link';
@@ -21,7 +20,7 @@ import styles from './uses.module.css';
 export const meta = () => {
   return baseMeta({
     title: 'Uses',
-    description: 'A list of hardware and software I use to do my thing',
+    description: 'A list of the tools I use to do my data science thingy.',
   });
 };
 
@@ -45,12 +44,9 @@ export const Uses = () => {
               <ProjectSectionText as="div">
                 <List>
                   <ListItem>
-                    <Link href="https://jupyter.org/">Jupyter Notebook</Link> My go-to 
+                    <Link href="https://jupyter.org/">Jupyter Notebook</Link> a go-to 
                     for coding up Python and R scripts, especially for data analysis 
-                    and machine learning projects like my <Link href="https://github.com/yassnemo/real-time-sentiment-twitter-analysis">
-                    Twitter Sentiment Analysis</Link>. It’s perfect for mixing code, 
-                    visuals, and notes.{' '}
-                    
+                    and machine learning projects.
                   </ListItem>
                   <ListItem>
                     <Link href="https://app.powerbi.com/">Power BI</Link> is what I use to 
