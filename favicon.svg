@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 64 64">
+  <style>
+    #favicon {
+      fill: #111;
+      @media (prefers-color-scheme: dark) {
+        fill: #fff;
+      }
+    }
+  </style>
+  <path id="favicon" d="M16 12h9l6.5 15L38 12h9l-15.5 21v17h-10V33L6 12z"/>
+</svg>
