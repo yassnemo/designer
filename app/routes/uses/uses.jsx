@@ -30,13 +30,13 @@ export const Uses = () => {
     <>
       <ProjectContainer className={styles.uses}>
         <ProjectBackground
-          src={moroccanMintTeaImage} // Use the Moroccan mint tea image
+          src={moroccanMintTeaImage} 
           placeholder={usesBackgroundPlaceholder}
           opacity={0.7}
         />
         <ProjectHeader
           title="Uses"
-          description="Here's a quick rundown of the tools, apps, and gear I use as a Data Science student to investigate data, build projects, and keep my workflow smooth. <br />Oh, and that's Moroccan tea in the background, my dad swears it's the ultimate headache fix!"
+          description="Here's a quick rundown of the tools, apps, and gear I use as a Data Science student to work with data, build projects, and keep my workflow smooth. <br />And yeah, that's Moroccan tea in the background, my dad swears it's the ultimate headache fix!"
         />
         <ProjectSection padding="none" className={styles.section}>
           <ProjectSectionContent>
@@ -60,20 +60,19 @@ export const Uses = () => {
                   </ListItem>
                   <ListItem>
                     <Link href="https://www.knime.com/">KNIME</Link> is a lifesaver for quick 
-                    sentiment and keyword analysis with drag-and-drop workflows. Great for 
-                    when I want to prototype without diving too deep into code.
+                    sentiment and keyword analysis with drag-and-drop workflows. Great if you 
+                    want to prototype without diving too deep into code.
                   </ListItem>
                   <ListItem>
                     <Link href="https://www.dask.org/">Dask</Link> is the my go to when 
-                    datasets get too big for Pandas, I turn to it for parallel computing. 
-                    It’s quite literally like Pandas on steroids, allowing me push massive 
-                    CSV files or run distributed ML models without crashing my humble laptop. 
+                    datasets get too big for Pandas. It’s quite literally like Pandas on 
+                    steroids, allowing me to push massive CSV files or run distributed ML 
+                    models without crashing my humble laptop. 
                   </ListItem>
                   <ListItem>
                     <Link href="https://mlflow.org/">MLflow</Link> a pro favorite for 
                     managing the machine learning lifecycle. I use it to track experiments, 
-                    log model parameters, and deploy models. It Keeps my ML projects 
-                    organized and scalable.
+                    log model parameters, and deploy models. 
                   </ListItem>
                 </List>
               </ProjectSectionText>
@@ -102,7 +101,7 @@ export const Uses = () => {
                     of Code project. Keeps things tidy and reproducible.
                   </ListItem>
                   <ListItem>
-                    Git & GitHub is Where I stash my projects. Git for version control 
+                    Git & GitHub is where I stash my projects. Git for version control 
                     is my safety net.
                   </ListItem>
                 </List>
@@ -117,10 +116,9 @@ export const Uses = () => {
               <ProjectSectionText as="div">
                 <List>
                   <ListItem>
-                    I use <Link href="https://vscodium.com/">Canva</Link> For 
-                    quick visuals to spice up my blog posts or portfolio, like 
-                    infographics for my article on multiple intelligences. It’s 
-                    simple but gets the job done.
+                    I use <Link href="https://vscodium.com/">Canva</Link> for 
+                    pressentations and other graphics. It’s super user-friendly 
+                    and has a ton of templates.
                   </ListItem>
                   <ListItem>
                     <Link href="https://www.napkin.ai/">Napkin</Link> is a neat tool 
@@ -150,7 +148,7 @@ export const Uses = () => {
                     like my brain’s external hard drive.
                   </ListItem>
                   <ListItem>
-                    <Link href="https://colab.research.google.com/">Google Colab</Link>  
+                    <Link href="https://colab.research.google.com/">Google Colab </Link>  
                     is what I use for running heavy machine learning models when my laptop 
                     needs a break. Cloud power for the win.
                   </ListItem>
