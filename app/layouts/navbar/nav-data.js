@@ -35,6 +35,12 @@ export const socialLinks = [
     icon: 'twitter',
   },
   {
+    label: 'SoundCloud',
+    url: 'https://soundcloud.com/yassine-erradouani',
+    icon: 'soundcloud',
+
+  },
+  {
     label: 'Github',
     url: `https://github.com/${config.github}`,
     icon: 'github',

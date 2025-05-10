@@ -124,8 +124,8 @@ export const Home = () => {
         sectionRef={projectTwo}
         visible={visibleSections.includes(projectTwo.current)}
         index={2}
-        title="Video game progress tracking"
-        description="Design and development for a video game tracking app built in React Native"
+        title="YMovies movie recommendation"
+        description="Designed and developed to guide film lovers to their new favourite movies."
         buttonText="View website"
         buttonLink="https://gamestack.hamishw.com"
         model={{
