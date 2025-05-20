@@ -1,0 +1,93 @@
+/* Highlight and link styles for project text */
+
+.highlightText {
+  background-image: linear-gradient(transparent 70%, var(--colorAccent) 0);
+  background-size: 100% 100%;
+  background-position: 0 0;
+  background-repeat: no-repeat;
+  display: inline;
+}
+
+.highlightTech {
+  font-weight: var(--fontWeightMedium);
+  color: var(--colorAccent);
+  transition: color 0.3s ease;
+}
+
+.metricText {
+  display: inline-block;
+  font-weight: var(--fontWeightMedium);
+  color: var(--colorAccent);
+  background-color: rgba(var(--rgbAccent), 0.1);
+  padding: 0.1em 0.4em;
+  border-radius: 4px;
+  margin: 0 0.1em;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Dark mode enhancements */
+:global([data-theme='dark']) .highlightTech {
+  color: var(--colorAccentLight);
+}
+
+:global([data-theme='dark']) .metricText {
+  color: var(--colorAccentLight);
+  background-color: rgba(var(--rgbAccent), 0.15);
+}
+
+.linkText {
+  color: var(--colorAccent);
+  text-decoration: none;
+  position: relative;
+  transition: color 0.3s ease;
+}
+
+.linkText::after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 1px;
+  bottom: 0;
+  left: 0;
+  background-color: var(--colorAccent);
+  transform: scaleX(0);
+  transform-origin: bottom right;
+  transition: transform 0.3s ease;
+}
+
+.linkText:hover {
+  color: var(--colorAccent);
+}
+
+.linkText:hover::after {
+  transform: scaleX(1);
+  transform-origin: bottom left;
+}
+
+:global([data-theme='dark']) .linkText {
+  color: var(--colorAccentLight);
+}
+
+:global([data-theme='dark']) .linkText::after {
+  background-color: var(--colorAccentLight);
+}
+
+:global([data-theme='dark']) .linkText:hover {
+  color: var(--colorAccentLight);
+}
+
+/* Risk score color indicators */
+.riskLow {
+  color: #4caf50;
+  font-weight: var(--fontWeightMedium);
+}
+
+.riskMedium {
+  color: #ff9800;
+  font-weight: var(--fontWeightMedium);
+}
+
+.riskHigh {
+  color: #f44336;
+  font-weight: var(--fontWeightMedium);
+}

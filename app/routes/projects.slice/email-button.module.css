@@ -1,0 +1,54 @@
+.emailButton {
+  background-color: rgb(0, 225, 226);
+  color: #000;
+  font-weight: 500;
+  font-size: var(--fontSizeBodyS);
+  height: auto;
+  padding: var(--spaceXS) var(--spaceM);
+  border-radius: 4px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0;
+  transition: transform 0.3s ease, background-color 0.3s ease;
+  position: relative;
+  animation: fadeIn 0.6s var(--bezierFastoutSlowin) forwards;
+}
+
+.emailButton:hover {
+  transform: translateY(-2px);
+  background-color: rgb(0, 235, 236);
+}
+
+.buttonContainer {
+  display: flex;
+  justify-content: flex-start;
+  width: 100%;
+  max-width: var(--maxWidthL);
+  margin: 0 auto;
+  padding: 0 var(--spaceM);
+  padding-left: var(--spaceL);
+  opacity: 0;
+  animation: fadeIn 0.6s var(--bezierFastoutSlowin) forwards 0.3s;
+}
+
+@media (--mediaMobile) {
+  .buttonContainer {
+    justify-content: flex-start;
+    margin: var(--spaceM) auto;
+    padding-left: var(--spaceM);
+  }
+  
+  .emailButton {
+    margin-left: var(--spaceS);
+  }
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
