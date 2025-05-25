@@ -10,6 +10,11 @@ export async function getPosts() {
       let slug = build.routes[id].path;
       if (slug === undefined) throw new Error(`No route for ${id}`);
 
+      // Skip posts without frontmatter or required fields
+      if (!post.frontmatter || !post.frontmatter.title || !post.frontmatter.date) {
+        return null;
+      }
+
       const text = await import(`../articles.${slug}.mdx?raw`);
       const readTime = readingTime(text.default);
       const timecode = formatTimecode(readTime);
@@ -22,12 +27,22 @@ export async function getPosts() {
     })
   );
 
-  return sortBy(posts, post => post.frontmatter.date, 'desc');
+  // Filter out null entries (posts without proper frontmatter)
+  const validPosts = posts.filter(post => post !== null);
+
+  return sortBy(validPosts, post => post.frontmatter.date, 'desc');
 }
 
 function sortBy(arr, key, dir = 'asc') {
   return arr.sort((a, b) => {
-    const res = compare(key(a), key(b));
+    const aValue = key(a);
+    const bValue = key(b);
+    
+    // Handle undefined or null values
+    if (aValue === undefined || aValue === null) return 1;
+    if (bValue === undefined || bValue === null) return -1;
+    
+    const res = compare(aValue, bValue);
     return dir === 'asc' ? res : -res;
   });
 }
