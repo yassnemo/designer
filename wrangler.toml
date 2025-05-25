@@ -1,3 +1,5 @@
 # Required configuration for Cloudflare Pages
 pages_build_output_dir = "build/client"
 name = "designer"
+compatibility_flags = ["nodejs_compat"]
+compatibility_date = "2024-05-01"
