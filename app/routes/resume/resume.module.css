@@ -618,6 +618,72 @@
       color: #ccd6f6;
     }
   }
+  /* Light theme specific styles */
+  :global([data-theme='light']) & {
+    background-color: #f8f9fa;
+    border-color: color-mix(in lab, var(--text) 8%, transparent);
+    box-shadow: 0 10px 30px -15px rgba(0, 0, 0, 0.2);
+    
+    & p {
+      color: #2d3748;
+    }
+  }
+}
+
+.projectDescriptionCompact {
+  background-color: var(--backgroundLight);
+  padding: 2px var(--spaceM); /* Much shorter height, normal horizontal padding */
+  border-radius: 2px;
+  font-size: 6px !important; /* Made much smaller - force override */
+  
+  /* Override Text component styles with higher specificity */
+  & [data-size] {
+    font-size: 14px !important;
+  }
+  line-height: 1.1;
+  margin-bottom: var(--spaceL);
+  position: relative;
+  z-index: 3;
+  box-shadow: 0 10px 30px -15px rgba(0, 0, 0, 0.7);
+  border: 1px solid color-mix(in lab, var(--text) 10%, transparent);  width: 150%; /* Make it much wider than normal */
+  margin-left: -50%; /* Extend it much further to the left, away from the image */
+  max-width: none;
+  min-height: auto;
+  height: auto;
+  
+  @media (--mediaTablet) {
+    background-color: color-mix(in lab, var(--background) 95%, var(--primary) 5%);
+    padding: 2px var(--spaceM);
+    box-shadow: none;
+    border: none;
+    width: 100%;
+    margin-left: 0;
+    font-size: 8px !important; /* Ensure small size on mobile too */
+    
+    & [data-size] {
+      font-size: 10px !important;
+    }
+  }
+  
+  & p {
+    color: var(--text);
+    margin: 0;
+    display: inline; /* Keep text inline for compact layout */
+    white-space: normal; /* Allow text wrapping */
+    word-wrap: break-word; /* Break long words if needed */
+    font-size: inherit !important; /* Inherit the small font size */
+  }
+  
+  /* Dark theme specific styles */
+  :global([data-theme='dark']) & {
+    background-color: #1a1a1a;
+    border-color: color-mix(in lab, var(--text) 15%, transparent);
+    box-shadow: 0 10px 30px -15px rgba(0, 0, 0, 0.9);
+    
+    & p {
+      color: #ccd6f6;
+    }
+  }
   
   /* Light theme specific styles */
   :global([data-theme='light']) & {
