@@ -503,24 +503,22 @@ export default function Resume() {
                 <div className={styles.sectionLine} />
               </div>
               
-              <div className={styles.projectsContainer}>
-                {/* Project 1 */}
+              <div className={styles.projectsContainer}>                {/* Project 1 */}
                 <div className={styles.projectCard}>
                   <div className={styles.projectContent}>
-                    <div className={styles.projectLabel}>
-                      <Text size="s">Featured Project</Text>
+                    <div className={styles.projectLabelAligned}>
+                      <Text>Featured Project</Text>
                     </div>
-                    <Heading as="h3" level={4} className={styles.projectTitle}>
+                    <Heading as="h3" level={4} className={styles.projectTitleAligned}>
                       Real-time Data Pipeline for E-commerce Analytics
                     </Heading>
-                    <div className={styles.projectDescription}>
-                      <Text>
-                        A scalable data engineering project processing real-time e-commerce transactions. 
-                        Built end-to-end data pipeline using Apache Kafka, Spark Streaming, and Airflow processing 100k+ events/minute. 
-                        Implemented data quality checks and monitoring with Great Expectations and Grafana.
+                    <div className={styles.projectDescriptionCompact}>
+                      <Text size="s">
+                        Scalable data engineering pipeline processing 100k+ e-commerce events/minute 
+                        using Kafka, Spark Streaming, and Airflow with automated quality checks.
                       </Text>
                     </div>
-                    <div className={styles.projectTechStack}>
+                    <div className={styles.projectTechStackAligned}>
                       <Text size="s">Apache Kafka</Text>
                       <Text size="s">Spark Streaming</Text>
                       <Text size="s">Airflow</Text>
@@ -528,7 +526,7 @@ export default function Resume() {
                       <Text size="s">Grafana</Text>
                       <Text size="s">Tableau</Text>
                     </div>
-                    <div className={styles.projectLinks}>
+                    <div className={styles.projectLinksAligned}>
                       <Button
                         secondary
                         icon="github"
@@ -551,7 +549,7 @@ export default function Resume() {
                       </Button>
                     </div>
                   </div>
-                  <div className={styles.projectImage}>
+                  <div className={styles.projectImageShifted}>
                     <ThemeImage
                       src={vizLightImage}
                       srcSet={`${vizLightImage} 800w, ${vizLightImage} 1920w`}
@@ -560,25 +558,22 @@ export default function Resume() {
                       sizes="(max-width: 768px) 100vw, 50vw"
                     />
                   </div>
-                </div>
-
-                {/* Project 2 */}
-                <div className={styles.projectCard} data-reverse="true">
+                </div>                {/* Project 2 */}
+                <div className={styles.projectCard}>
                   <div className={styles.projectContent}>
-                    <div className={styles.projectLabel}>
-                      <Text size="s">Featured Project</Text>
+                    <div className={styles.projectLabelAligned}>
+                      <Text>Featured Project</Text>
                     </div>
-                    <Heading as="h3" level={4} className={styles.projectTitle}>
+                    <Heading as="h3" level={4} className={styles.projectTitleAligned}>
                       Customer Data Warehouse & Analytics Platform
                     </Heading>
-                    <div className={styles.projectDescription}>
-                      <Text>
-                        A comprehensive data warehouse solution for customer analytics and reporting. 
-                        Designed star schema data warehouse in Snowflake handling 50M+ customer records with 
-                        CDC pipelines using Debezium and Kafka for real-time data synchronization.
+                    <div className={styles.projectDescriptionCompact}>
+                      <Text size="s">
+                        Comprehensive data warehouse in Snowflake handling 50M+ customer records 
+                        with CDC pipelines using Debezium and Kafka for real-time synchronization.
                       </Text>
                     </div>
-                    <div className={styles.projectTechStack}>
+                    <div className={styles.projectTechStackAligned}>
                       <Text size="s">Snowflake</Text>
                       <Text size="s">Debezium</Text>
                       <Text size="s">Kafka</Text>
@@ -586,7 +581,7 @@ export default function Resume() {
                       <Text size="s">Power BI</Text>
                       <Text size="s">Python</Text>
                     </div>
-                    <div className={styles.projectLinks}>
+                    <div className={styles.projectLinksAligned}>
                       <Button
                         secondary
                         icon="github"
@@ -609,7 +604,7 @@ export default function Resume() {
                       </Button>
                     </div>
                   </div>
-                  <div className={styles.projectImage}>
+                  <div className={styles.projectImageShifted}>
                     <ThemeImage
                       src={vizDarkImage}
                       srcSet={`${vizDarkImage} 800w, ${vizDarkImage} 1920w`}
@@ -618,7 +613,7 @@ export default function Resume() {
                       sizes="(max-width: 768px) 100vw, 50vw"
                     />
                   </div>
-                </div>                {/* Project 3 */}                <div className={styles.projectCard}>
+                </div>{/* Project 3 */}                <div className={styles.projectCard}>
                   <div className={styles.projectContent}>
                     <div className={styles.projectLabelAligned}>
                       <Text>Featured Project</Text>
