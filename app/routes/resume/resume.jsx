@@ -33,7 +33,7 @@ import vizDarkPlaceholder from '~/assets/spr-design-system-light-placeholder.png
 export const meta = () => {
   return baseMeta({
     title: 'Resume',
-    description: 'My academic achievements, data science projects, and technical skills.',
+    description: 'My academic achievements, data engineering projects, and analytical expertise.',
   });
 };
 
@@ -41,11 +41,13 @@ export default function Resume() {
   const skillsRef = useRef();
   const workExpRef = useRef();
   const educationRef = useRef();
+  const techStackRef = useRef();
   const projectsRef = useRef();
   
   const areSkillsVisible = useInViewport(skillsRef);
   const isWorkExpVisible = useInViewport(workExpRef);
   const isEducationVisible = useInViewport(educationRef);
+  const isTechStackVisible = useInViewport(techStackRef);
   const isProjectsVisible = useInViewport(projectsRef);
   
   return (
@@ -55,21 +57,23 @@ export default function Resume() {
           src={backgroundSpr}
           placeholder={backgroundPlaceholder}
           opacity={0.7}
-        />
-        <ProjectHeader
+        />        <ProjectHeader
           title={<DecoderText text="Resume" />}
-          description="My academic achievements, data science projects, and technical skills."
-        />
-        <div className={styles.buttonBackground}>
-          <Button 
-            className={styles.downloadButton}
-            href="/data-science-resume.pdf"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Download CV
-          </Button>
-        </div>
+          description="My academic achievements, data engineering projects, and analytical expertise."
+        >
+          <div className={styles.downloadContainer}>
+            <Button 
+              secondary
+              iconHoverShift
+              iconEnd="arrow-right"
+              href="/data-engineering-resume.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Download CV
+            </Button>
+          </div>
+        </ProjectHeader>
         
         {/* Work Experience Section */}
         <ProjectSection>
@@ -81,27 +85,29 @@ export default function Resume() {
                 </Heading>
                 <div className={styles.sectionLine} />
               </div>
-              
-              {/* Experience Item 1 */}
+                {/* Experience Item 1 */}
               <div className={styles.resumeRow}>
                 <div className={styles.timePeriod}>
                   <Icon icon="time" className={styles.timeIcon} />
                   <Text size="s">Jun 2024 — Present</Text>
                 </div>
                 <Heading as="h3" level={5} className={styles.resumeRole}>
-                  Data Science Intern
+                  Data Engineering Intern
                 </Heading>
-                <Text size="m">QuantumTech Analytics</Text>
+                <Text size="m">DataFlow Technologies</Text>
                 <div className={styles.resumeDetails}>
                   <List>
                     <ListItem>
-                      Developed machine learning models to predict customer churn, improving retention strategies by 25%
+                      Built and maintained ETL pipelines processing 2TB+ of daily data using Apache Airflow and Python
                     </ListItem>
                     <ListItem>
-                      Performed exploratory data analysis on large datasets using Python (Pandas, NumPy) and visualized insights with Matplotlib and Seaborn
+                      Optimized SQL queries and database performance, reducing processing time by 40% on PostgreSQL and Snowflake
                     </ListItem>
                     <ListItem>
-                      Collaborated with cross-functional teams to implement data-driven solutions for business challenges
+                      Implemented real-time data streaming solutions using Apache Kafka and Spark Streaming
+                    </ListItem>
+                    <ListItem>
+                      Designed and deployed data quality monitoring systems with automated alerting using Great Expectations
                     </ListItem>
                   </List>
                 </div>
@@ -114,19 +120,22 @@ export default function Resume() {
                   <Text size="s">Sep 2023 — May 2024</Text>
                 </div>
                 <Heading as="h3" level={5} className={styles.resumeRole}>
-                  Research Assistant
+                  Data Analyst
                 </Heading>
-                <Text size="m">University Data Science Lab</Text>
+                <Text size="m">University Analytics Department</Text>
                 <div className={styles.resumeDetails}>
                   <List>
                     <ListItem>
-                      Assisted in research projects focusing on natural language processing and sentiment analysis
+                      Analyzed student performance data to identify patterns and trends affecting graduation rates
                     </ListItem>
                     <ListItem>
-                      Implemented deep learning models using TensorFlow and PyTorch for text classification tasks
+                      Created automated reporting dashboards using Power BI and Tableau, serving 500+ faculty members
                     </ListItem>
                     <ListItem>
-                      Co-authored a research paper on efficient text preprocessing techniques for low-resource languages
+                      Developed predictive models to forecast enrollment trends with 95% accuracy using Python and scikit-learn
+                    </ListItem>
+                    <ListItem>
+                      Collaborated with IT team to migrate legacy reporting systems to cloud-based solutions on AWS
                     </ListItem>
                   </List>
                 </div>
@@ -139,19 +148,22 @@ export default function Resume() {
                   <Text size="s">May 2023 — Aug 2023</Text>
                 </div>
                 <Heading as="h3" level={5} className={styles.resumeRole}>
-                  Data Analysis Volunteer
+                  Junior Data Engineer
                 </Heading>
-                <Text size="m">HealthTech NGO</Text>
+                <Text size="m">TechStart Solutions</Text>
                 <div className={styles.resumeDetails}>
                   <List>
                     <ListItem>
-                      Analyzed public health datasets to identify trends and insights for community health initiatives
+                      Designed and implemented data warehouse architecture using dimensional modeling principles
                     </ListItem>
                     <ListItem>
-                      Created interactive dashboards using Tableau to communicate findings to non-technical stakeholders
+                      Built automated data pipelines using Apache Airflow to ingest data from multiple sources (APIs, databases, files)
                     </ListItem>
                     <ListItem>
-                      Developed automated data cleaning scripts that reduced processing time by 40%
+                      Implemented data validation and testing frameworks, reducing data quality issues by 60%
+                    </ListItem>
+                    <ListItem>
+                      Containerized applications using Docker and deployed on Kubernetes for scalable data processing
                     </ListItem>
                   </List>
                 </div>
@@ -168,27 +180,29 @@ export default function Resume() {
                 </Heading>
                 <div className={styles.sectionLine} />
               </div>
-              
-              {/* Education Item 1 - Masters */}
+                {/* Education Item 1 - Masters */}
               <div className={styles.resumeRow}>
                 <div className={styles.timePeriod}>
                   <Icon icon="time" className={styles.timeIcon} />
                   <Text size="s">2023 — 2025</Text>
                 </div>
                 <Heading as="h3" level={5} className={styles.resumeRole}>
-                  Master of Science in Data Science
+                  Master of Science in Data Engineering
                 </Heading>
-                <Text size="m">University of Advanced Analytics</Text>
+                <Text size="m">University of Technology</Text>
                 <div className={styles.resumeDetails}>
                   <List>
                     <ListItem>
                       GPA: 3.9/4.0
                     </ListItem>
                     <ListItem>
-                      Relevant coursework: Machine Learning, Statistical Methods, Deep Learning, Big Data Analytics, Natural Language Processing
+                      Relevant coursework: Big Data Systems, Data Warehousing, Stream Processing, Cloud Computing, Database Design, Distributed Systems
                     </ListItem>
                     <ListItem>
-                      Thesis: "Predictive Modeling of Consumer Behavior Using Multi-modal Data"
+                      Thesis: "Optimizing Real-time Data Processing Pipelines for IoT Sensor Networks"
+                    </ListItem>
+                    <ListItem>
+                      Teaching Assistant for "Introduction to Data Engineering" course
                     </ListItem>
                   </List>
                 </div>
@@ -201,21 +215,143 @@ export default function Resume() {
                   <Text size="s">2019 — 2023</Text>
                 </div>
                 <Heading as="h3" level={5} className={styles.resumeRole}>
-                  Bachelor of Science in Statistics with Computer Science Minor
+                  Bachelor of Science in Computer Science with Data Analytics Minor
                 </Heading>
                 <Text size="m">State University</Text>
                 <div className={styles.resumeDetails}>
                   <List>
                     <ListItem>
-                      GPA: 3.7/4.0
+                      GPA: 3.7/4.0 • Magna Cum Laude
                     </ListItem>
                     <ListItem>
-                      Relevant coursework: Probability Theory, Statistical Inference, Data Structures, Database Systems, Linear Algebra
+                      Relevant coursework: Data Structures & Algorithms, Database Systems, Statistics, Linear Algebra, Software Engineering, Data Mining
                     </ListItem>
                     <ListItem>
-                      Senior Project: "Exploratory Data Analysis of Urban Mobility Patterns"
+                      Senior Capstone: "Building a Scalable Data Pipeline for Real-time Analytics"
+                    </ListItem>
+                    <ListItem>
+                      President of Data Science Club • Member of Computer Science Honor Society
                     </ListItem>
                   </List>
+                </div>
+              </div>            </div>
+            
+            <Divider className={styles.divider} />
+              {/* Tech Stack Section */}
+            <div className={styles.section} ref={techStackRef} data-visible={isTechStackVisible}>
+              <div className={styles.sectionHeading}>
+                <Heading as="h2" level={4}>
+                  Tech Stack
+                </Heading>
+                <div className={styles.sectionLine} />
+              </div>
+              
+              <div className={styles.techStackContainer} data-visible={isTechStackVisible}>
+                <div className={styles.techStackItem}>
+                  <div className={styles.techStackIcon}>
+                    <Icon icon="python" />
+                  </div>
+                  <span className={styles.techStackName}>Python</span>
+                </div>
+                <div className={styles.techStackItem}>
+                  <div className={styles.techStackIcon}>
+                    <Icon icon="database" />
+                  </div>
+                  <span className={styles.techStackName}>SQL</span>
+                </div>
+                <div className={styles.techStackItem}>
+                  <div className={styles.techStackIcon}>
+                    <Icon icon="spark" />
+                  </div>
+                  <span className={styles.techStackName}>Apache Spark</span>
+                </div>
+                <div className={styles.techStackItem}>
+                  <div className={styles.techStackIcon}>
+                    <Icon icon="airflow" />
+                  </div>
+                  <span className={styles.techStackName}>Apache Airflow</span>
+                </div>
+                <div className={styles.techStackItem}>
+                  <div className={styles.techStackIcon}>
+                    <Icon icon="kafka" />
+                  </div>
+                  <span className={styles.techStackName}>Apache Kafka</span>
+                </div>
+                <div className={styles.techStackItem}>
+                  <div className={styles.techStackIcon}>
+                    <Icon icon="snowflake" />
+                  </div>
+                  <span className={styles.techStackName}>Snowflake</span>
+                </div>
+                <div className={styles.techStackItem}>
+                  <div className={styles.techStackIcon}>
+                    <Icon icon="aws" />
+                  </div>
+                  <span className={styles.techStackName}>AWS</span>
+                </div>
+                <div className={styles.techStackItem}>
+                  <div className={styles.techStackIcon}>
+                    <Icon icon="gcp" />
+                  </div>
+                  <span className={styles.techStackName}>Google Cloud</span>
+                </div>
+                <div className={styles.techStackItem}>
+                  <div className={styles.techStackIcon}>
+                    <Icon icon="docker" />
+                  </div>
+                  <span className={styles.techStackName}>Docker</span>
+                </div>
+                <div className={styles.techStackItem}>
+                  <div className={styles.techStackIcon}>
+                    <Icon icon="kubernetes" />
+                  </div>
+                  <span className={styles.techStackName}>Kubernetes</span>
+                </div>                <div className={styles.techStackItem}>
+                  <div className={styles.techStackIcon}>
+                    <Icon icon="postgresql" />
+                  </div>
+                  <span className={styles.techStackName}>PostgreSQL</span>
+                </div>
+                <div className={styles.techStackItem}>
+                  <div className={styles.techStackIcon}>
+                    <Icon icon="powerbi" />
+                  </div>
+                  <span className={styles.techStackName}>Power BI</span>
+                </div>
+                <div className={styles.techStackItem}>
+                  <div className={styles.techStackIcon}>
+                    <Icon icon="git" />
+                  </div>
+                  <span className={styles.techStackName}>Git</span>
+                </div>
+                <div className={styles.techStackItem}>
+                  <div className={styles.techStackIcon}>
+                    <Icon icon="terraform" />
+                  </div>
+                  <span className={styles.techStackName}>Terraform</span>
+                </div>                <div className={styles.techStackItem}>
+                  <div className={styles.techStackIcon}>
+                    <Icon icon="dbt" />
+                  </div>
+                  <span className={styles.techStackName}>dbt</span>
+                </div>
+                <div className={styles.techStackItem}>
+                  <div className={styles.techStackIcon}>
+                    <Icon icon="java" />
+                  </div>
+                  <span className={styles.techStackName}>Java</span>
+                </div>
+                <div className={styles.techStackItem}>
+                  <div className={styles.techStackIcon}>
+                    <Icon icon="github-actions" />
+                  </div>
+                  <span className={styles.techStackName}>GitHub Actions</span>
+                </div>
+                <div className={styles.techStackItem}>
+                  <div className={styles.techStackIcon}>
+                    <Icon icon="r-language" />
+                  </div>
+                  <span className={styles.techStackName}>R</span>
                 </div>
               </div>
             </div>
@@ -243,8 +379,7 @@ export default function Resume() {
                     <Icon icon="database" />
                   </div>
                   <span className={styles.skillName}>SQL</span>
-                </div>
-                <div className={styles.skillItem}>
+                </div>                <div className={styles.skillItem}>
                   <div className={styles.skillIcon}>
                     <Icon icon="chart" />
                   </div>
@@ -252,45 +387,61 @@ export default function Resume() {
                 </div>
                 <div className={styles.skillItem}>
                   <div className={styles.skillIcon}>
-                    <Icon icon="tensorflow" />
+                    <Icon icon="spark" />
                   </div>
-                  <span className={styles.skillName}>TensorFlow</span>
+                  <span className={styles.skillName}>Apache Spark</span>
                 </div>
                 <div className={styles.skillItem}>
                   <div className={styles.skillIcon}>
-                    <Icon icon="pytorch" />
+                    <Icon icon="airflow" />
                   </div>
-                  <span className={styles.skillName}>PyTorch</span>
+                  <span className={styles.skillName}>Apache Airflow</span>
                 </div>
                 <div className={styles.skillItem}>
                   <div className={styles.skillIcon}>
-                    <Icon icon="r" />
+                    <Icon icon="kafka" />
                   </div>
-                  <span className={styles.skillName}>R</span>
+                  <span className={styles.skillName}>Apache Kafka</span>
                 </div>
                 <div className={styles.skillItem}>
                   <div className={styles.skillIcon}>
-                    <Icon icon="jupyter" />
+                    <Icon icon="snowflake" />
                   </div>
-                  <span className={styles.skillName}>Jupyter</span>
+                  <span className={styles.skillName}>Snowflake</span>
+                </div>                <div className={styles.skillItem}>
+                  <div className={styles.skillIcon}>
+                    <Icon icon="gcp" />
+                  </div>
+                  <span className={styles.skillName}>Google Cloud</span>
                 </div>
                 <div className={styles.skillItem}>
+                  <div className={styles.skillIcon}>
+                    <Icon icon="docker" />
+                  </div>
+                  <span className={styles.skillName}>Docker</span>
+                </div>
+                <div className={styles.skillItem}>
+                  <div className={styles.skillIcon}>
+                    <Icon icon="kubernetes" />
+                  </div>
+                  <span className={styles.skillName}>Kubernetes</span>
+                </div>
+                <div className={styles.skillItem}>
+                  <div className={styles.skillIcon}>
+                    <Icon icon="postgresql" />
+                  </div>
+                  <span className={styles.skillName}>PostgreSQL</span>
+                </div>
+                <div className={styles.skillItem}>
+                  <div className={styles.skillIcon}>
+                    <Icon icon="mongodb" />
+                  </div>
+                  <span className={styles.skillName}>MongoDB</span>
+                </div>                <div className={styles.skillItem}>
                   <div className={styles.skillIcon}>
                     <Icon icon="pandas" />
                   </div>
                   <span className={styles.skillName}>Pandas</span>
-                </div>
-                <div className={styles.skillItem}>
-                  <div className={styles.skillIcon}>
-                    <Icon icon="numpy" />
-                  </div>
-                  <span className={styles.skillName}>NumPy</span>
-                </div>
-                <div className={styles.skillItem}>
-                  <div className={styles.skillIcon}>
-                    <Icon icon="scikit" />
-                  </div>
-                  <span className={styles.skillName}>Scikit-Learn</span>
                 </div>
                 <div className={styles.skillItem}>
                   <div className={styles.skillIcon}>
@@ -300,21 +451,9 @@ export default function Resume() {
                 </div>
                 <div className={styles.skillItem}>
                   <div className={styles.skillIcon}>
-                    <Icon icon="statistics" />
+                    <Icon icon="powerbi" />
                   </div>
-                  <span className={styles.skillName}>Statistics</span>
-                </div>
-                <div className={styles.skillItem}>
-                  <div className={styles.skillIcon}>
-                    <Icon icon="spark" />
-                  </div>
-                  <span className={styles.skillName}>Spark</span>
-                </div>
-                <div className={styles.skillItem}>
-                  <div className={styles.skillIcon}>
-                    <Icon icon="aws" />
-                  </div>
-                  <span className={styles.skillName}>AWS</span>
+                  <span className={styles.skillName}>Power BI</span>
                 </div>
                 <div className={styles.skillItem}>
                   <div className={styles.skillIcon}>
@@ -324,102 +463,219 @@ export default function Resume() {
                 </div>
                 <div className={styles.skillItem}>
                   <div className={styles.skillIcon}>
-                    <Icon icon="docker" />
+                    <Icon icon="terraform" />
                   </div>
-                  <span className={styles.skillName}>Docker</span>
+                  <span className={styles.skillName}>Terraform</span>
+                </div>                <div className={styles.skillItem}>
+                  <div className={styles.skillIcon}>
+                    <Icon icon="dbt" />
+                  </div>
+                  <span className={styles.skillName}>dbt</span>
+                </div>
+                <div className={styles.skillItem}>
+                  <div className={styles.skillIcon}>
+                    <Icon icon="java" />
+                  </div>
+                  <span className={styles.skillName}>Java</span>
+                </div>
+                <div className={styles.skillItem}>
+                  <div className={styles.skillIcon}>
+                    <Icon icon="github-actions" />
+                  </div>
+                  <span className={styles.skillName}>GitHub Actions</span>
+                </div>
+                <div className={styles.skillItem}>
+                  <div className={styles.skillIcon}>
+                    <Icon icon="r-language" />
+                  </div>
+                  <span className={styles.skillName}>R</span>
                 </div>
               </div>
             </div>
             
             <Divider className={styles.divider} />
-            
-            {/* Projects Section */}
+              {/* Projects Section */}
             <div className={styles.section} ref={projectsRef} data-visible={isProjectsVisible}>
               <div className={styles.sectionHeading}>
                 <Heading as="h2" level={4}>
-                  Projects
+                  Some Things I've Built
                 </Heading>
                 <div className={styles.sectionLine} />
               </div>
               
-              {/* Project 1 */}
-              <div className={styles.projectCard}>
-                <Heading as="h3" level={5} className={styles.resumeRole}>
-                  Customer Segmentation Analysis
-                </Heading>
-                <div className={styles.timePeriod}>
-                  <Icon icon="time" className={styles.timeIcon} />
-                  <Text size="s">2024</Text>
+              <div className={styles.projectsContainer}>
+                {/* Project 1 */}
+                <div className={styles.projectCard}>
+                  <div className={styles.projectContent}>
+                    <div className={styles.projectLabel}>
+                      <Text size="s">Featured Project</Text>
+                    </div>
+                    <Heading as="h3" level={4} className={styles.projectTitle}>
+                      Real-time Data Pipeline for E-commerce Analytics
+                    </Heading>
+                    <div className={styles.projectDescription}>
+                      <Text>
+                        A scalable data engineering project processing real-time e-commerce transactions. 
+                        Built end-to-end data pipeline using Apache Kafka, Spark Streaming, and Airflow processing 100k+ events/minute. 
+                        Implemented data quality checks and monitoring with Great Expectations and Grafana.
+                      </Text>
+                    </div>
+                    <div className={styles.projectTechStack}>
+                      <Text size="s">Apache Kafka</Text>
+                      <Text size="s">Spark Streaming</Text>
+                      <Text size="s">Airflow</Text>
+                      <Text size="s">AWS EKS</Text>
+                      <Text size="s">Grafana</Text>
+                      <Text size="s">Tableau</Text>
+                    </div>
+                    <div className={styles.projectLinks}>
+                      <Button
+                        secondary
+                        icon="github"
+                        href="https://github.com/your-repo"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className={styles.projectLink}
+                      >
+                        GitHub
+                      </Button>
+                      <Button
+                        secondary
+                        icon="external"
+                        href="https://your-demo.com"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className={styles.projectLink}
+                      >
+                        Live Demo
+                      </Button>
+                    </div>
+                  </div>
+                  <div className={styles.projectImage}>
+                    <ThemeImage
+                      src={vizLightImage}
+                      srcSet={`${vizLightImage} 800w, ${vizLightImage} 1920w`}
+                      placeholder={vizLightPlaceholder}
+                      alt="Real-time data pipeline dashboard"
+                      sizes="(max-width: 768px) 100vw, 50vw"
+                    />
+                  </div>
                 </div>
-                <div className={styles.resumeDetails}>
-                  <Text size="m">
-                    A comprehensive customer segmentation project using K-means clustering and PCA.
-                  </Text>
-                  <List>
-                    <ListItem>
-                      Performed feature engineering and dimensionality reduction on customer purchase data
-                    </ListItem>
-                    <ListItem>
-                      Identified 5 distinct customer segments with unique purchasing behaviors
-                    </ListItem>
-                    <ListItem>
-                      Created interactive visualizations using Plotly and Dash to communicate findings
-                    </ListItem>
-                  </List>
+
+                {/* Project 2 */}
+                <div className={styles.projectCard} data-reverse="true">
+                  <div className={styles.projectContent}>
+                    <div className={styles.projectLabel}>
+                      <Text size="s">Featured Project</Text>
+                    </div>
+                    <Heading as="h3" level={4} className={styles.projectTitle}>
+                      Customer Data Warehouse & Analytics Platform
+                    </Heading>
+                    <div className={styles.projectDescription}>
+                      <Text>
+                        A comprehensive data warehouse solution for customer analytics and reporting. 
+                        Designed star schema data warehouse in Snowflake handling 50M+ customer records with 
+                        CDC pipelines using Debezium and Kafka for real-time data synchronization.
+                      </Text>
+                    </div>
+                    <div className={styles.projectTechStack}>
+                      <Text size="s">Snowflake</Text>
+                      <Text size="s">Debezium</Text>
+                      <Text size="s">Kafka</Text>
+                      <Text size="s">dbt</Text>
+                      <Text size="s">Power BI</Text>
+                      <Text size="s">Python</Text>
+                    </div>
+                    <div className={styles.projectLinks}>
+                      <Button
+                        secondary
+                        icon="github"
+                        href="https://github.com/your-repo"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className={styles.projectLink}
+                      >
+                        GitHub
+                      </Button>
+                      <Button
+                        secondary
+                        icon="external"
+                        href="https://your-demo.com"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className={styles.projectLink}
+                      >
+                        Live Demo
+                      </Button>
+                    </div>
+                  </div>
+                  <div className={styles.projectImage}>
+                    <ThemeImage
+                      src={vizDarkImage}
+                      srcSet={`${vizDarkImage} 800w, ${vizDarkImage} 1920w`}
+                      placeholder={vizDarkPlaceholder}
+                      alt="Data warehouse analytics platform"
+                      sizes="(max-width: 768px) 100vw, 50vw"
+                    />
+                  </div>
                 </div>
-              </div>
-              
-              {/* Project 2 */}
-              <div className={styles.projectCard}>
-                <Heading as="h3" level={5} className={styles.resumeRole}>
-                  Sentiment Analysis of Product Reviews
-                </Heading>
-                <div className={styles.timePeriod}>
-                  <Icon icon="time" className={styles.timeIcon} />
-                  <Text size="s">2023</Text>
-                </div>
-                <div className={styles.resumeDetails}>
-                  <Text size="m">
-                    An NLP project to analyze sentiment in e-commerce product reviews.
-                  </Text>
-                  <List>
-                    <ListItem>
-                      Built a sentiment analysis model using BERT with 92% accuracy
-                    </ListItem>
-                    <ListItem>
-                      Extracted key topics from reviews using topic modeling (LDA)
-                    </ListItem>
-                    <ListItem>
-                      Developed a Flask API to integrate the model with a product dashboard
-                    </ListItem>
-                  </List>
-                </div>
-              </div>
-              
-              {/* Project 3 */}
-              <div className={styles.projectCard}>
-                <Heading as="h3" level={5} className={styles.resumeRole}>
-                  Time Series Forecasting for Energy Consumption
-                </Heading>
-                <div className={styles.timePeriod}>
-                  <Icon icon="time" className={styles.timeIcon} />
-                  <Text size="s">2023</Text>
-                </div>
-                <div className={styles.resumeDetails}>
-                  <Text size="m">
-                    A forecasting project to predict household energy consumption.
-                  </Text>
-                  <List>
-                    <ListItem>
-                      Implemented ARIMA, SARIMA, and Prophet models for time series prediction
-                    </ListItem>
-                    <ListItem>
-                      Achieved 15% lower RMSE than baseline models by incorporating weather data
-                    </ListItem>
-                    <ListItem>
-                      Created an interactive dashboard for real-time monitoring and predictions
-                    </ListItem>
-                  </List>
+
+                {/* Project 3 */}
+                <div className={styles.projectCard}>
+                  <div className={styles.projectContent}>
+                    <div className={styles.projectLabel}>
+                      <Text size="s">Featured Project</Text>
+                    </div>
+                    <Heading as="h3" level={4} className={styles.projectTitle}>
+                      IoT Sensor Data Processing & Anomaly Detection
+                    </Heading>
+                    <div className={styles.projectDescription}>
+                      <Text>
+                        A machine learning-powered system for processing IoT sensor data and detecting anomalies. 
+                        Processed streaming data from 10,000+ IoT sensors using Apache Kafka and Spark Streaming with 
+                        95% accuracy in identifying equipment failures.
+                      </Text>
+                    </div>
+                    <div className={styles.projectTechStack}>
+                      <Text size="s">Apache Kafka</Text>
+                      <Text size="s">Spark Streaming</Text>
+                      <Text size="s">Kubernetes</Text>
+                      <Text size="s">Docker</Text>
+                      <Text size="s">Python</Text>
+                      <Text size="s">TensorFlow</Text>
+                    </div>
+                    <div className={styles.projectLinks}>
+                      <Button
+                        secondary
+                        icon="github"
+                        href="https://github.com/your-repo"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className={styles.projectLink}
+                      >
+                        GitHub
+                      </Button>
+                      <Button
+                        secondary
+                        icon="external"
+                        href="https://your-demo.com"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className={styles.projectLink}
+                      >
+                        Live Demo
+                      </Button>
+                    </div>
+                  </div>
+                  <div className={styles.projectImage}>
+                    <ThemeImage
+                      src={vizLightImage}
+                      srcSet={`${vizLightImage} 800w, ${vizLightImage} 1920w`}
+                      placeholder={vizLightPlaceholder}
+                      alt="IoT sensor data processing system"
+                      sizes="(max-width: 768px) 100vw, 50vw"
+                    />
+                  </div>
                 </div>
               </div>
             </div>
@@ -428,9 +684,8 @@ export default function Resume() {
             <div className={styles.contactSection}>
               <Heading as="h2" level={4}>
                 Let's Connect
-              </Heading>
-              <Text size="l" align="center">
-                Interested in data science collaborations or discussing my research and projects?
+              </Heading>              <Text size="l" align="center">
+                Interested in data engineering collaborations or discussing data analytics projects?
               </Text>
               <div className={styles.contactButtons}>
                 <Button href="mailto:example@email.com" icon="send">
