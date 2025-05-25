@@ -618,31 +618,25 @@ export default function Resume() {
                       sizes="(max-width: 768px) 100vw, 50vw"
                     />
                   </div>
-                </div>
-
-                {/* Project 3 */}
-                <div className={styles.projectCard}>
+                </div>                {/* Project 3 */}                <div className={styles.projectCard}>
                   <div className={styles.projectContent}>
-                    <div className={styles.projectLabel}>
-                      <Text size="s">Featured Project</Text>
+                    <div className={styles.projectLabelAligned}>
+                      <Text>Featured Project</Text>
                     </div>
-                    <Heading as="h3" level={4} className={styles.projectTitle}>
-                      IoT Sensor Data Processing & Anomaly Detection
+                    <Heading as="h3" level={4} className={styles.projectTitleAligned}>
+                      IoT Data & Anomaly Detection
                     </Heading>                    <div className={styles.projectDescriptionCompact}>
                       <Text size="s">
                         ML system for real-time anomaly detection on 10,000+ IoT sensors 
                         using Kafka and Spark; 95% failure detection accuracy.
                       </Text>
-                    </div>
-                    <div className={styles.projectTechStack}>
+                    </div>                    <div className={styles.projectTechStackAligned}>
                       <Text size="s">Apache Kafka</Text>
                       <Text size="s">Spark Streaming</Text>
-                      <Text size="s">Kubernetes</Text>
                       <Text size="s">Docker</Text>
-                      <Text size="s">Python</Text>
                       <Text size="s">TensorFlow</Text>
                     </div>
-                    <div className={styles.projectLinks}>
+                    <div className={styles.projectLinksAligned}>
                       <Button
                         secondary
                         icon="github"
@@ -662,10 +656,9 @@ export default function Resume() {
                         className={styles.projectLink}
                       >
                         Live Demo
-                      </Button>
-                    </div>
+                      </Button>                    </div>
                   </div>
-                  <div className={styles.projectImage}>
+                  <div className={styles.projectImageShifted}>
                     <ThemeImage
                       src={vizLightImage}
                       srcSet={`${vizLightImage} 800w, ${vizLightImage} 1920w`}
