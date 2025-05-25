@@ -38,13 +38,11 @@ export const meta = () => {
 };
 
 export default function Resume() {
-  const skillsRef = useRef();
   const workExpRef = useRef();
   const educationRef = useRef();
   const techStackRef = useRef();
   const projectsRef = useRef();
   
-  const areSkillsVisible = useInViewport(skillsRef);
   const isWorkExpVisible = useInViewport(workExpRef);
   const isEducationVisible = useInViewport(educationRef);
   const isTechStackVisible = useInViewport(techStackRef);
@@ -353,145 +351,7 @@ export default function Resume() {
                   </div>
                   <span className={styles.techStackName}>R</span>
                 </div>
-              </div>
-            </div>
-            
-            <Divider className={styles.divider} />
-            
-            {/* Skills Section */}
-            <div className={styles.section} ref={skillsRef}>
-              <div className={styles.sectionHeading}>
-                <Heading as="h2" level={4}>
-                  Skills
-                </Heading>
-                <div className={styles.sectionLine} />
-              </div>
-              
-              <div className={styles.skillsContainer} data-visible={areSkillsVisible}>
-                <div className={styles.skillItem}>
-                  <div className={styles.skillIcon}>
-                    <Icon icon="python" />
-                  </div>
-                  <span className={styles.skillName}>Python</span>
-                </div>
-                <div className={styles.skillItem}>
-                  <div className={styles.skillIcon}>
-                    <Icon icon="database" />
-                  </div>
-                  <span className={styles.skillName}>SQL</span>
-                </div>                <div className={styles.skillItem}>
-                  <div className={styles.skillIcon}>
-                    <Icon icon="chart" />
-                  </div>
-                  <span className={styles.skillName}>Data Visualization</span>
-                </div>
-                <div className={styles.skillItem}>
-                  <div className={styles.skillIcon}>
-                    <Icon icon="spark" />
-                  </div>
-                  <span className={styles.skillName}>Apache Spark</span>
-                </div>
-                <div className={styles.skillItem}>
-                  <div className={styles.skillIcon}>
-                    <Icon icon="airflow" />
-                  </div>
-                  <span className={styles.skillName}>Apache Airflow</span>
-                </div>
-                <div className={styles.skillItem}>
-                  <div className={styles.skillIcon}>
-                    <Icon icon="kafka" />
-                  </div>
-                  <span className={styles.skillName}>Apache Kafka</span>
-                </div>
-                <div className={styles.skillItem}>
-                  <div className={styles.skillIcon}>
-                    <Icon icon="snowflake" />
-                  </div>
-                  <span className={styles.skillName}>Snowflake</span>
-                </div>                <div className={styles.skillItem}>
-                  <div className={styles.skillIcon}>
-                    <Icon icon="gcp" />
-                  </div>
-                  <span className={styles.skillName}>Google Cloud</span>
-                </div>
-                <div className={styles.skillItem}>
-                  <div className={styles.skillIcon}>
-                    <Icon icon="docker" />
-                  </div>
-                  <span className={styles.skillName}>Docker</span>
-                </div>
-                <div className={styles.skillItem}>
-                  <div className={styles.skillIcon}>
-                    <Icon icon="kubernetes" />
-                  </div>
-                  <span className={styles.skillName}>Kubernetes</span>
-                </div>
-                <div className={styles.skillItem}>
-                  <div className={styles.skillIcon}>
-                    <Icon icon="postgresql" />
-                  </div>
-                  <span className={styles.skillName}>PostgreSQL</span>
-                </div>
-                <div className={styles.skillItem}>
-                  <div className={styles.skillIcon}>
-                    <Icon icon="mongodb" />
-                  </div>
-                  <span className={styles.skillName}>MongoDB</span>
-                </div>                <div className={styles.skillItem}>
-                  <div className={styles.skillIcon}>
-                    <Icon icon="pandas" />
-                  </div>
-                  <span className={styles.skillName}>Pandas</span>
-                </div>
-                <div className={styles.skillItem}>
-                  <div className={styles.skillIcon}>
-                    <Icon icon="tableau" />
-                  </div>
-                  <span className={styles.skillName}>Tableau</span>
-                </div>
-                <div className={styles.skillItem}>
-                  <div className={styles.skillIcon}>
-                    <Icon icon="powerbi" />
-                  </div>
-                  <span className={styles.skillName}>Power BI</span>
-                </div>
-                <div className={styles.skillItem}>
-                  <div className={styles.skillIcon}>
-                    <Icon icon="git" />
-                  </div>
-                  <span className={styles.skillName}>Git</span>
-                </div>
-                <div className={styles.skillItem}>
-                  <div className={styles.skillIcon}>
-                    <Icon icon="terraform" />
-                  </div>
-                  <span className={styles.skillName}>Terraform</span>
-                </div>                <div className={styles.skillItem}>
-                  <div className={styles.skillIcon}>
-                    <Icon icon="dbt" />
-                  </div>
-                  <span className={styles.skillName}>dbt</span>
-                </div>
-                <div className={styles.skillItem}>
-                  <div className={styles.skillIcon}>
-                    <Icon icon="java" />
-                  </div>
-                  <span className={styles.skillName}>Java</span>
-                </div>
-                <div className={styles.skillItem}>
-                  <div className={styles.skillIcon}>
-                    <Icon icon="github-actions" />
-                  </div>
-                  <span className={styles.skillName}>GitHub Actions</span>
-                </div>
-                <div className={styles.skillItem}>
-                  <div className={styles.skillIcon}>
-                    <Icon icon="r-language" />
-                  </div>
-                  <span className={styles.skillName}>R</span>
-                </div>
-              </div>
-            </div>
+              </div>            </div>
             
             <Divider className={styles.divider} />
               {/* Projects Section */}
