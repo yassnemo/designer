@@ -628,12 +628,10 @@ export default function Resume() {
                     </div>
                     <Heading as="h3" level={4} className={styles.projectTitle}>
                       IoT Sensor Data Processing & Anomaly Detection
-                    </Heading>
-                    <div className={styles.projectDescription}>
-                      <Text>
-                        A machine learning-powered system for processing IoT sensor data and detecting anomalies. 
-                        Processed streaming data from 10,000+ IoT sensors using Apache Kafka and Spark Streaming with 
-                        95% accuracy in identifying equipment failures.
+                    </Heading>                    <div className={styles.projectDescriptionCompact}>
+                      <Text size="s">
+                        ML system for real-time anomaly detection on 10,000+ IoT sensors 
+                        using Kafka and Spark; 95% failure detection accuracy.
                       </Text>
                     </div>
                     <div className={styles.projectTechStack}>
