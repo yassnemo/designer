@@ -1,5 +1,10 @@
 @layer components {
   .icon {
     fill: currentColor;
+    
+    /* Handle img elements for individual SVGs */
+    &[src] {
+      filter: var(--icon-filter, none);
+    }
   }
 }
