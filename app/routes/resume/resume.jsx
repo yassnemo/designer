@@ -25,10 +25,10 @@ import styles from './resume.module.css';
 import backgroundSpr from '~/assets/resume-background-large.jpg';
 import backgroundPlaceholder from '~/assets/resume-background-placeholder.jpg';
 // Import placeholder images for data visualization
-import vizLightImage from '~/assets/spr-design-system-light-placeholder.png';
-import vizDarkImage from '~/assets/spr-design-system-light-placeholder.png';
-import vizLightPlaceholder from '~/assets/spr-design-system-light-placeholder.png';
-import vizDarkPlaceholder from '~/assets/spr-design-system-light-placeholder.png';
+import vizLightImage from '~/assets/real-time-data-pipeline-light.jpg';
+import vizDarkImage from '~/assets/real-time-data-pipeline-dark.jpg';
+import vizLightPlaceholder from '~/assets/real-time-data-pipeline-light-placeholder.jpg';
+import vizDarkPlaceholder from '~/assets/real-time-data-pipeline-dark-placeholder.jpg';
 
 export const meta = () => {
   return baseMeta({
