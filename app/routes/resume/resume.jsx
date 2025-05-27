@@ -22,8 +22,8 @@ import {
 } from '~/layouts/project';
 import { baseMeta } from '~/utils/meta';
 import styles from './resume.module.css';
-import backgroundSpr from '~/assets/spr-background.jpg';
-import backgroundPlaceholder from '~/assets/spr-background-placeholder.jpg';
+import backgroundSpr from '~/assets/resume-background-large.jpg';
+import backgroundPlaceholder from '~/assets/resume-background-placeholder.jpg';
 // Import placeholder images for data visualization
 import vizLightImage from '~/assets/spr-design-system-light-placeholder.png';
 import vizDarkImage from '~/assets/spr-design-system-light-placeholder.png';
@@ -82,24 +82,23 @@ export default function Resume() {
                   Work Experience
                 </Heading>
                 <div className={styles.sectionLine} />
-              </div>
-                {/* Experience Item 1 */}
-              <div className={styles.resumeRow}>
-                <div className={styles.timePeriod}>
-                  <Icon icon="time" className={styles.timeIcon} />
-                  <Text size="s">Jun 2024 — Present</Text>
+              </div>                {/* Experience Item 1 */}              <div className={styles.resumeRow}>
+                <div className={styles.resumeHeader}>
+                  <div className={styles.resumeHeaderLeft}>
+                    <Heading as="h3" level={5} className={styles.resumeRole}>
+                      Data Engineering Intern
+                    </Heading>
+                    <Text size="m" className={styles.companyName}>DataFlow Technologies</Text>
+                  </div>
+                  <div className={styles.timePeriod}>
+                    <Icon icon="time" className={styles.timeIcon} />
+                    <Text size="s">Jun 2024 — Present</Text>
+                  </div>
                 </div>
-                <Heading as="h3" level={5} className={styles.resumeRole}>
-                  Data Engineering Intern
-                </Heading>
-                <Text size="m">DataFlow Technologies</Text>
                 <div className={styles.resumeDetails}>
                   <List>
                     <ListItem>
-                      Built and maintained ETL pipelines processing 2TB+ of daily data using Apache Airflow and Python
-                    </ListItem>
-                    <ListItem>
-                      Optimized SQL queries and database performance, reducing processing time by 40% on PostgreSQL and Snowflake
+                      Optimized SQL queries and database performance, reducing processing time by 20% on PostgreSQL and Snowflake
                     </ListItem>
                     <ListItem>
                       Implemented real-time data streaming solutions using Apache Kafka and Spark Streaming
@@ -110,17 +109,20 @@ export default function Resume() {
                   </List>
                 </div>
               </div>
-              
-              {/* Experience Item 2 */}
+                {/* Experience Item 2 */}
               <div className={styles.resumeRow}>
-                <div className={styles.timePeriod}>
-                  <Icon icon="time" className={styles.timeIcon} />
-                  <Text size="s">Sep 2023 — May 2024</Text>
+                <div className={styles.resumeHeader}>
+                  <div className={styles.resumeHeaderLeft}>
+                    <Heading as="h3" level={5} className={styles.resumeRole}>
+                      Junior Data Analyst
+                    </Heading>
+                    <Text size="m" className={styles.companyName}>University Analytics Department</Text>
+                  </div>
+                  <div className={styles.timePeriod}>
+                    <Icon icon="time" className={styles.timeIcon} />
+                    <Text size="s">Sep 2023 — May 2024</Text>
+                  </div>
                 </div>
-                <Heading as="h3" level={5} className={styles.resumeRole}>
-                  Data Analyst
-                </Heading>
-                <Text size="m">University Analytics Department</Text>
                 <div className={styles.resumeDetails}>
                   <List>
                     <ListItem>
@@ -130,25 +132,25 @@ export default function Resume() {
                       Created automated reporting dashboards using Power BI and Tableau, serving 500+ faculty members
                     </ListItem>
                     <ListItem>
-                      Developed predictive models to forecast enrollment trends with 95% accuracy using Python and scikit-learn
-                    </ListItem>
-                    <ListItem>
                       Collaborated with IT team to migrate legacy reporting systems to cloud-based solutions on AWS
                     </ListItem>
                   </List>
                 </div>
               </div>
-              
-              {/* Experience Item 3 */}
+                {/* Experience Item 3 */}
               <div className={styles.resumeRow}>
-                <div className={styles.timePeriod}>
-                  <Icon icon="time" className={styles.timeIcon} />
-                  <Text size="s">May 2023 — Aug 2023</Text>
+                <div className={styles.resumeHeader}>
+                  <div className={styles.resumeHeaderLeft}>
+                    <Heading as="h3" level={5} className={styles.resumeRole}>
+                      Junior Data Engineer
+                    </Heading>
+                    <Text size="m" className={styles.companyName}>TechStart Solutions</Text>
+                  </div>
+                  <div className={styles.timePeriod}>
+                    <Icon icon="time" className={styles.timeIcon} />
+                    <Text size="s">May 2023 — Aug 2023</Text>
+                  </div>
                 </div>
-                <Heading as="h3" level={5} className={styles.resumeRole}>
-                  Junior Data Engineer
-                </Heading>
-                <Text size="m">TechStart Solutions</Text>
                 <div className={styles.resumeDetails}>
                   <List>
                     <ListItem>
@@ -156,9 +158,6 @@ export default function Resume() {
                     </ListItem>
                     <ListItem>
                       Built automated data pipelines using Apache Airflow to ingest data from multiple sources (APIs, databases, files)
-                    </ListItem>
-                    <ListItem>
-                      Implemented data validation and testing frameworks, reducing data quality issues by 60%
                     </ListItem>
                     <ListItem>
                       Containerized applications using Docker and deployed on Kubernetes for scalable data processing
@@ -177,17 +176,20 @@ export default function Resume() {
                   Education
                 </Heading>
                 <div className={styles.sectionLine} />
-              </div>
-                {/* Education Item 1 - Masters */}
+              </div>                {/* Education Item 1 - Masters */}
               <div className={styles.resumeRow}>
-                <div className={styles.timePeriod}>
-                  <Icon icon="time" className={styles.timeIcon} />
-                  <Text size="s">2023 — 2025</Text>
+                <div className={styles.resumeHeader}>
+                  <div className={styles.resumeHeaderLeft}>
+                    <Heading as="h3" level={5} className={styles.resumeRole}>
+                      Master of Science in Data Engineering
+                    </Heading>
+                    <Text size="m" className={styles.companyName}>University of Technology</Text>
+                  </div>
+                  <div className={styles.timePeriod}>
+                    <Icon icon="time" className={styles.timeIcon} />
+                    <Text size="s">2023 — 2025</Text>
+                  </div>
                 </div>
-                <Heading as="h3" level={5} className={styles.resumeRole}>
-                  Master of Science in Data Engineering
-                </Heading>
-                <Text size="m">University of Technology</Text>
                 <div className={styles.resumeDetails}>
                   <List>
                     <ListItem>
@@ -205,17 +207,20 @@ export default function Resume() {
                   </List>
                 </div>
               </div>
-              
-              {/* Education Item 2 - Bachelors */}
+                {/* Education Item 2 - Bachelors */}
               <div className={styles.resumeRow}>
-                <div className={styles.timePeriod}>
-                  <Icon icon="time" className={styles.timeIcon} />
-                  <Text size="s">2019 — 2023</Text>
+                <div className={styles.resumeHeader}>
+                  <div className={styles.resumeHeaderLeft}>
+                    <Heading as="h3" level={5} className={styles.resumeRole}>
+                      Bachelor of Science in Computer Science with Data Analytics Minor
+                    </Heading>
+                    <Text size="m" className={styles.companyName}>State University</Text>
+                  </div>
+                  <div className={styles.timePeriod}>
+                    <Icon icon="time" className={styles.timeIcon} />
+                    <Text size="s">2019 — 2023</Text>
+                  </div>
                 </div>
-                <Heading as="h3" level={5} className={styles.resumeRole}>
-                  Bachelor of Science in Computer Science with Data Analytics Minor
-                </Heading>
-                <Text size="m">State University</Text>
                 <div className={styles.resumeDetails}>
                   <List>
                     <ListItem>
