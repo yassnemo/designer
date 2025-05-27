@@ -59,9 +59,10 @@
 .timePeriod {
   color: var(--textLight);
   font-size: var(--fontSizeBodyS);
-  margin-bottom: var(--spaceXS);
   display: flex;
   align-items: center;
+  margin-left: auto;
+  white-space: nowrap;
 }
 
 .timeIcon {
@@ -134,6 +135,25 @@
   }
 }
 
+.resumeHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: var(--spaceXS);
+  gap: var(--spaceM);
+  
+  @media (--mediaMobile) {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: var(--spaceXS);
+  }
+}
+
+.resumeHeaderLeft {
+  flex: 1;
+  min-width: 0;
+}
+
 .resumeRole {
   margin-bottom: var(--spaceXS);
   color: var(--textTitle);
@@ -157,7 +177,22 @@
     &::after {
       transform: scaleX(1);
       transform-origin: left;
-    }
+    }  }
+}
+
+.companyName {
+  display: block !important;
+  margin-top: var(--spaceXS);
+  margin-bottom: var(--spaceXS);
+  font-weight: 400;
+    /* Dark theme color */
+  :global([data-theme='dark']) & {
+    color: #CCD6F6 !important;
+  }
+  
+  /* Light theme color - improved contrast */
+  :global([data-theme='light']) & {
+    color: #4a5568 !important;
   }
 }
 
