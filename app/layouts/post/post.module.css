@@ -282,4 +282,17 @@
       grid-column: var(--mainColumn);
     }
   }
+
+  .credits {
+    display: grid;
+    grid-template-columns: 1fr var(--gutterWidth) var(--contentWidth) var(--gutterWidth) 1fr;
+
+    @media (--mediaTablet) {
+      grid-template-columns: 100%;
+    }
+
+    & > * {
+      grid-column: var(--mainColumn);
+    }
+  }
 }

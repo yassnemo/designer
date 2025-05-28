@@ -2,6 +2,7 @@ import { Divider } from '~/components/divider';
 import { Footer } from '~/components/footer';
 import { Heading } from '~/components/heading';
 import { Image } from '~/components/image';
+import { ImageCredit } from '~/components/image-credit';
 import { Section } from '~/components/section';
 import { Text } from '~/components/text';
 import { tokens } from '~/components/theme-provider/theme';
@@ -14,7 +15,7 @@ import { cssProps, msToNum, numToMs } from '~/utils/style';
 import styles from './post.module.css';
 import { Link as RouterLink } from '@remix-run/react';
 
-export const Post = ({ children, title, date, banner, timecode }) => {
+export const Post = ({ children, title, date, banner, bannerCredit, timecode }) => {
   const scrollToHash = useScrollToHash();
   const imageRef = useRef();
   const [dateTime, setDateTime] = useState(null);
@@ -105,6 +106,11 @@ export const Post = ({ children, title, date, banner, timecode }) => {
           {children}
         </Text>
       </Section>
+      {bannerCredit && (
+        <Section className={styles.credits}>
+          <ImageCredit credit={bannerCredit} />
+        </Section>
+      )}
       <Footer />
     </article>
   );
