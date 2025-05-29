@@ -2,7 +2,7 @@ import { classes } from '~/utils/style';
 import styles from './icon.module.css';
 import { forwardRef } from 'react';
 import sprites from './icons.svg';
-import { AWSIcon, DockerIcon } from './inline-icons';
+import { AWSIcon, DockerIcon, EmailIcon } from './inline-icons';
 
 // Import individual SVG files for tech stack (fallback for icons not yet converted to inline)
 import pythonIcon from '~/assets/icons/python.svg';
@@ -24,6 +24,7 @@ import rLanguageIcon from '~/assets/icons/r-language.svg';
 const inlineIcons = {
   aws: AWSIcon,
   docker: DockerIcon,
+  email: EmailIcon,
 };
 
 // Mapping for individual SVG files (fallback)
