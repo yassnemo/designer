@@ -41,7 +41,7 @@ export const links = () => {
 
 export const meta = () => {
   return baseMeta({
-    title: 'Designer + Developer',
+    title: 'Data Science Student + Developer',
     description: `Design portfolio of ${config.name} — a product designer working on web & mobile apps with a focus on motion, experience design, and accessibility.`,
   });
 };
@@ -127,7 +127,7 @@ export const Home = () => {
         title="YMovies movie recommendation"
         description="Designed and developed to guide film lovers to their new favourite movies."
         buttonText="View website"
-        buttonLink="https://gamestack.hamishw.com"
+        buttonLink="https://gamestack.yerradouani.com"
         model={{
           type: 'phone',
           alt: 'App login screen',

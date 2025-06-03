@@ -57,8 +57,11 @@ export default function Resume() {
           opacity={0.7}
         />        <ProjectHeader
           title={<DecoderText text="Resume" />}
-          description="My academic achievements, data engineering projects, and analytical expertise."
-        >
+          description="This page captures my journey — blending academic 
+                       growth with hands-on data engineering projects. 
+                       It’s where ideas meet action, and curiosity creates solutions. Explore 
+                       the skills I’ve honed, challenges I’ve overcome, and lessons 
+                       I’ve learned.Want to know more? Download my resume below!">
           <div className={styles.downloadContainer}>
             <Button 
               secondary
@@ -181,13 +184,13 @@ export default function Resume() {
                 <div className={styles.resumeHeader}>
                   <div className={styles.resumeHeaderLeft}>
                     <Heading as="h3" level={5} className={styles.resumeRole}>
-                      Master of Science in Data Engineering
+                      Data Science Certificate
                     </Heading>
-                    <Text size="m" className={styles.companyName}>University of Technology</Text>
+                    <Text size="m" className={styles.companyName}>Alx Morocco</Text>
                   </div>
                   <div className={styles.timePeriod}>
                     <Icon icon="time" className={styles.timeIcon} />
-                    <Text size="s">2023 — 2025</Text>
+                    <Text size="s">2025 — 2026</Text>
                   </div>
                 </div>
                 <div className={styles.resumeDetails}>
@@ -212,13 +215,13 @@ export default function Resume() {
                 <div className={styles.resumeHeader}>
                   <div className={styles.resumeHeaderLeft}>
                     <Heading as="h3" level={5} className={styles.resumeRole}>
-                      Bachelor of Science in Computer Science with Data Analytics Minor
+                      Bachelor of Data Science
                     </Heading>
-                    <Text size="m" className={styles.companyName}>State University</Text>
+                    <Text size="m" className={styles.companyName}>University of Applied Science Ibn Zohr</Text>
                   </div>
                   <div className={styles.timePeriod}>
                     <Icon icon="time" className={styles.timeIcon} />
-                    <Text size="s">2019 — 2023</Text>
+                    <Text size="s">2021 — 2025</Text>
                   </div>
                 </div>
                 <div className={styles.resumeDetails}>
@@ -539,27 +542,33 @@ export default function Resume() {
                 Interested in data engineering collaborations or discussing data analytics projects?
               </Text>
               <div className={styles.contactButtons}>
-                <Button href="mailto:example@email.com" icon="send">
-                  Email Me
+                <Button
+                  secondary
+                  icon="linkedin"
+                  href="https://linkedin.com/yassine-erradouani"
+                  target="Yassine-Erradouani"
+                  rel="noopener noreferrer"
+                >
+                  LinkedIn
+                </Button>                <Button
+                  secondary
+                  icon="email"
+                  href="mailto:yassine.erradouani@protonmail.com"
+                  target="Yassine-Erradouani"
+                  rel="noopener noreferrer"
+                >
+                  Email
                 </Button>
                 <Button
                   secondary
                   icon="github"
-                  href="https://github.com"
-                  target="_blank"
+                  href="https://github.com/yassnemo"
+                  target="yassnemo"
                   rel="noopener noreferrer"
                 >
                   GitHub
                 </Button>
-                <Button
-                  secondary
-                  icon="linkedin"
-                  href="https://linkedin.com"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  LinkedIn
-                </Button>
+ 
               </div>
             </div>
           </ProjectSectionContent>
