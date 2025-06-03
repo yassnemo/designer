@@ -5,7 +5,7 @@ addons.setConfig({
   theme: {
     ...themes.dark,
     brandImage: './icon.svg',
-    brandTitle: 'Hamish Williams Components',
-    brandUrl: 'https://hamishw.com',
+    brandTitle: 'Yassine Erradouani Components',
+    brandUrl: 'https://yerradouani.com',
   },
 });
