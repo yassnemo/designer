@@ -1,5 +1,5 @@
 import usesBackgroundPlaceholder from '~/assets/uses-background-placeholder.jpg';
-import moroccanMintTeaImage from '/static/moroccan-mint-tea.jpg';
+import moroccanMintTeaImage from '/static/resume/moroccan-mint-tea.jpg';
 import { Footer } from '~/components/footer';
 import { Link } from '~/components/link';
 import { List, ListItem } from '~/components/list';

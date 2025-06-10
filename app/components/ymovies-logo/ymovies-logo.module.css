@@ -1,0 +1,45 @@
+@layer components {
+  .logoContainer {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--spaceS);
+    max-width: fit-content;
+  }  .logo {
+    flex-shrink: 0;
+    width: 38px;
+    height: 38px;
+    filter: var(--logoFilter, none);
+  }  .text {
+    font-family: 'AkayaKanadaka', var(--fontStack);
+    font-size: var(--fontSizeH5);
+    font-weight: 500;
+    color: var(--textTitle);
+    letter-spacing: -0.02em;
+    white-space: nowrap;
+  }
+  @media (--mediaTablet) {
+    .logoContainer {
+      gap: var(--spaceXS);
+    }
+    
+    .logo {
+      width: 32px;
+      height: 32px;
+    }    .text {
+      font-size: var(--fontSizeBodyL);
+    }
+  }
+
+  @media (--mediaMobile) {
+    .logoContainer {
+      gap: var(--spaceXS);
+    }
+    
+    .logo {
+      width: 28px;
+      height: 28px;
+    }    .text {
+      font-size: var(--fontSizeBodyM);
+    }
+  }
+}

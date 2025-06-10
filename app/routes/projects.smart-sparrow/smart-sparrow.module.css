@@ -42,3 +42,11 @@
     top: -5%;
   }
 }
+
+.projectLogo {
+  margin-bottom: var(--spaceL);
+
+  @media (--mediaMobile) {
+    margin-bottom: var(--spaceM);
+  }
+}

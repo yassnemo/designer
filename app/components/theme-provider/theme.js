@@ -117,6 +117,7 @@ const dark = {
   textTitle: 'var(--text)',
   textBody: 'color-mix(in lab, var(--text) 80%, transparent)',
   textLight: 'color-mix(in lab, var(--text) 60%, transparent)',
+  logoFilter: 'invert(1)',
 };
 
 const light = {
@@ -129,6 +130,7 @@ const light = {
   textTitle: 'color-mix(in lab, var(--text) 90%, transparent)',
   textBody: 'color-mix(in lab, var(--text) 75%, transparent)',
   textLight: 'color-mix(in lab, var(--text) 55%, transparent)',
+  logoFilter: 'none',
 };
 
 export const tokens = {

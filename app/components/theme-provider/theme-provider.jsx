@@ -5,6 +5,7 @@ import GothamBook from '~/assets/fonts/gotham-book.woff2';
 import GothamMediumItalic from '~/assets/fonts/gotham-medium-italic.woff2';
 import GothamMedium from '~/assets/fonts/gotham-medium.woff2';
 import IPAGothic from '~/assets/fonts/ipa-gothic.woff2';
+import AkayaKanadakaFont from '~/assets/fonts/AkayaKanadaka-Regular.ttf';
 import { createContext, useContext } from 'react';
 import { classes, media } from '~/utils/style';
 import { themes, tokens } from './theme';
@@ -169,6 +170,14 @@ const fontStyles = squish(`
     font-weight: 400;
     src: url(${IPAGothic}) format('woff2');
     font-display: swap;
+    font-style: normal;
+  }
+
+  @font-face {
+    font-family: 'AkayaKanadaka';
+    font-weight: 400;
+    src: url(${AkayaKanadakaFont}) format('truetype');
+    font-display: block;
     font-style: normal;
   }
 `);

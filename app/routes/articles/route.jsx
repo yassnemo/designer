@@ -11,7 +11,7 @@ export async function loader({ request }) {
   const module = await import(`../articles.${slug}.mdx`);
   const text = await import(`../articles.${slug}.mdx?raw`);
   const readTime = readingTime(text.default);
-  const ogImage = `${config.url}/static/${slug}-og.jpg`;
+  const ogImage = `${config.url}/static/articles/${slug}-og.jpg`;
 
   return json({
     ogImage,
