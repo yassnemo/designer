@@ -133,15 +133,16 @@ export const SmartSparrow = () => {
         </ProjectSection>
         <ProjectSection>
           <ProjectTextRow>
-            <ProjectSectionHeading>The problem</ProjectSectionHeading>
+            <ProjectSectionHeading>The Idea</ProjectSectionHeading>
             <ProjectSectionText>
-              In 2017, Smart Sparrow began a project to build an entirely new platform to
-              from the ground up to serve as the most powerful tool for educators to
-              create online learning experiences. The old platform was built in Flash, and
-              there were a number of user experience problems to solve in the process of
-              moving the platform to Javascript. The primary goals for the project were
-              reducing barriers to collaboration, and making the platform both easier for
-              new users, but with plenty of room to scale for advanced users.
+              I've always been intrigued with recommendation systems, and for the longest
+              time I wanted to build one, but I never had the opportunity to do so and 
+              even so I didn't have the right data to work with. One day, and as I was 
+              scrolling through Netflix, and the "Because you liked..." section came up
+              and I was facinated by how it was able to suggest movies that I would actually 
+              enjoy. And that's when I started working on YMovies. The entire project is Built
+              on the recommendation algorithm that I built, which is based on collaborative filtering
+              and content-based filtering. 
             </ProjectSectionText>
           </ProjectTextRow>
         </ProjectSection>

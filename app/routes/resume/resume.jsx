@@ -1,7 +1,6 @@
 import { useRef } from 'react';
 import { Button } from '~/components/button';
 import { DecoderText } from '~/components/decoder-text';
-import { Divider } from '~/components/divider';
 import { Footer } from '~/components/footer';
 import { Icon } from '~/components/icon';
 import { Link } from '~/components/link';
@@ -37,15 +36,12 @@ export const meta = () => {
   });
 };
 
-export default function Resume() {
-  const workExpRef = useRef();
+export default function Resume() {  const workExpRef = useRef();
   const educationRef = useRef();
-  const techStackRef = useRef();
   const projectsRef = useRef();
   
   const isWorkExpVisible = useInViewport(workExpRef);
   const isEducationVisible = useInViewport(educationRef);
-  const isTechStackVisible = useInViewport(techStackRef);
   const isProjectsVisible = useInViewport(projectsRef);
   
   return (
@@ -164,13 +160,10 @@ export default function Resume() {
                     </ListItem>
                     <ListItem>
                       Containerized applications using Docker and deployed on Kubernetes for scalable data processing
-                    </ListItem>
-                  </List>
+                    </ListItem>                  </List>
                 </div>
               </div>
             </div>
-            
-            <Divider className={styles.divider} />
             
             {/* Education Section */}
             <div className={styles.section} ref={educationRef} data-visible={isEducationVisible}>
@@ -239,129 +232,8 @@ export default function Resume() {
                       President of Data Science Club • Member of Computer Science Honor Society
                     </ListItem>
                   </List>
-                </div>
-              </div>            </div>
+                </div>              </div>            </div>
             
-            <Divider className={styles.divider} />
-              {/* Tech Stack Section */}
-            <div className={styles.section} ref={techStackRef} data-visible={isTechStackVisible}>
-              <div className={styles.sectionHeading}>
-                <Heading as="h2" level={4}>
-                  Tech Stack
-                </Heading>
-                <div className={styles.sectionLine} />
-              </div>
-              
-              <div className={styles.techStackContainer} data-visible={isTechStackVisible}>
-                <div className={styles.techStackItem}>
-                  <div className={styles.techStackIcon}>
-                    <Icon icon="python" />
-                  </div>
-                  <span className={styles.techStackName}>Python</span>
-                </div>
-                <div className={styles.techStackItem}>
-                  <div className={styles.techStackIcon}>
-                    <Icon icon="database" />
-                  </div>
-                  <span className={styles.techStackName}>SQL</span>
-                </div>
-                <div className={styles.techStackItem}>
-                  <div className={styles.techStackIcon}>
-                    <Icon icon="spark" />
-                  </div>
-                  <span className={styles.techStackName}>Apache Spark</span>
-                </div>
-                <div className={styles.techStackItem}>
-                  <div className={styles.techStackIcon}>
-                    <Icon icon="airflow" />
-                  </div>
-                  <span className={styles.techStackName}>Apache Airflow</span>
-                </div>
-                <div className={styles.techStackItem}>
-                  <div className={styles.techStackIcon}>
-                    <Icon icon="kafka" />
-                  </div>
-                  <span className={styles.techStackName}>Apache Kafka</span>
-                </div>
-                <div className={styles.techStackItem}>
-                  <div className={styles.techStackIcon}>
-                    <Icon icon="snowflake" />
-                  </div>
-                  <span className={styles.techStackName}>Snowflake</span>
-                </div>
-                <div className={styles.techStackItem}>
-                  <div className={styles.techStackIcon}>
-                    <Icon icon="aws" />
-                  </div>
-                  <span className={styles.techStackName}>AWS</span>
-                </div>
-                <div className={styles.techStackItem}>
-                  <div className={styles.techStackIcon}>
-                    <Icon icon="gcp" />
-                  </div>
-                  <span className={styles.techStackName}>Google Cloud</span>
-                </div>
-                <div className={styles.techStackItem}>
-                  <div className={styles.techStackIcon}>
-                    <Icon icon="docker" />
-                  </div>
-                  <span className={styles.techStackName}>Docker</span>
-                </div>
-                <div className={styles.techStackItem}>
-                  <div className={styles.techStackIcon}>
-                    <Icon icon="kubernetes" />
-                  </div>
-                  <span className={styles.techStackName}>Kubernetes</span>
-                </div>                <div className={styles.techStackItem}>
-                  <div className={styles.techStackIcon}>
-                    <Icon icon="postgresql" />
-                  </div>
-                  <span className={styles.techStackName}>PostgreSQL</span>
-                </div>
-                <div className={styles.techStackItem}>
-                  <div className={styles.techStackIcon}>
-                    <Icon icon="powerbi" />
-                  </div>
-                  <span className={styles.techStackName}>Power BI</span>
-                </div>
-                <div className={styles.techStackItem}>
-                  <div className={styles.techStackIcon}>
-                    <Icon icon="git" />
-                  </div>
-                  <span className={styles.techStackName}>Git</span>
-                </div>
-                <div className={styles.techStackItem}>
-                  <div className={styles.techStackIcon}>
-                    <Icon icon="terraform" />
-                  </div>
-                  <span className={styles.techStackName}>Terraform</span>
-                </div>                <div className={styles.techStackItem}>
-                  <div className={styles.techStackIcon}>
-                    <Icon icon="dbt" />
-                  </div>
-                  <span className={styles.techStackName}>dbt</span>
-                </div>
-                <div className={styles.techStackItem}>
-                  <div className={styles.techStackIcon}>
-                    <Icon icon="java" />
-                  </div>
-                  <span className={styles.techStackName}>Java</span>
-                </div>
-                <div className={styles.techStackItem}>
-                  <div className={styles.techStackIcon}>
-                    <Icon icon="github-actions" />
-                  </div>
-                  <span className={styles.techStackName}>GitHub Actions</span>
-                </div>
-                <div className={styles.techStackItem}>
-                  <div className={styles.techStackIcon}>
-                    <Icon icon="r-language" />
-                  </div>
-                  <span className={styles.techStackName}>R</span>
-                </div>
-              </div>            </div>
-            
-            <Divider className={styles.divider} />
               {/* Projects Section */}
             <div className={styles.section} ref={projectsRef} data-visible={isProjectsVisible}>
               <div className={styles.sectionHeading}>
