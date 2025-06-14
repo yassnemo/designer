@@ -233,7 +233,6 @@ export default function Resume() {  const workExpRef = useRef();
                     </ListItem>
                   </List>
                 </div>              </div>            </div>
-            
               {/* Projects Section */}
             <div className={styles.section} ref={projectsRef} data-visible={isProjectsVisible}>
               <div className={styles.sectionHeading}>
@@ -243,7 +242,8 @@ export default function Resume() {  const workExpRef = useRef();
                 <div className={styles.sectionLine} />
               </div>
               
-              <div className={styles.projectsContainer}>                {/* Project 1 */}
+              <div className={styles.projectsWrapper}>
+                <div className={styles.projectsContainer}>{/* Project 1 */}
                 <div className={styles.projectCard}>
                   <div className={styles.projectContent}>
                     <div className={styles.projectLabelAligned}>
@@ -400,9 +400,9 @@ export default function Resume() {  const workExpRef = useRef();
                       placeholder={vizLightPlaceholder}
                       alt="IoT sensor data processing system"
                       sizes="(max-width: 768px) 100vw, 50vw"
-                    />
-                  </div>
+                    />                  </div>
                 </div>
+              </div>
               </div>
             </div>
             
