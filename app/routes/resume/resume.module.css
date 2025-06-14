@@ -340,6 +340,22 @@
 }
 
 /* Projects Section Styles - Inspired by Brittany Chiang's design */
+.projectsWrapper {
+  transform: translateX(70px);
+  
+  @media (--mediaTablet) {
+    transform: translateX(50px);
+  }
+  
+  @media (--mediaMobile) {
+    transform: translateX(0);
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+    justify-content: center;
+  }
+}
+
 .projectsContainer {
   display: flex;
   flex-direction: column;
